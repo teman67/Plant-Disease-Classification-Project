@@ -9,29 +9,51 @@ from matplotlib.image import imread
 import itertools
 import random
 
-def page_cells_visualizer_body():
-    st.write("### Cells Visualizer")
+def page_plant_image_visualizer_body():
+    st.write("### Plant image Visualizer")
     st.info(
         f"* The client is interested in having a study that visually "
-        f"differentiates a parasitised from an uninfected cell.")
+        f"differentiates a healthy plant from a powdery or rust plant.")
     
     version = 'v1'
-    if st.checkbox("Difference between average and variability image"):
+    if st.checkbox("Difference between average and variability image; Healthy vs. Powdery"):
       
-      avg_parasitized = plt.imread(f"outputs/{version}/avg_var_Parasitized.png")
-      avg_uninfected = plt.imread(f"outputs/{version}/avg_var_Uninfected.png")
+      avg_healthy = plt.imread(f"jupyter_notebooks/outputs/{version}/avg_var_Healthy.png")
+      avg_powdery = plt.imread(f"jupyter_notebooks/outputs/{version}/avg_var_Powdery.png")
 
       st.warning(
         f"* We notice the average and variability images did not show "
         f"patterns where we could intuitively differentiate one from another. " 
         f"However, a small difference in the colour pigment of the average images is seen for both labels.")
 
-      st.image(avg_parasitized, caption='Parasitised Cell - Average and Variability')
-      st.image(avg_uninfected, caption='Uninfected Cell - Average and Variability')
+      st.image(avg_healthy, caption='Healthy Plant - Average and Variability')
+      st.image(avg_powdery, caption='Powdery Plant - Average and Variability')
       st.write("---")
 
-    if st.checkbox("Differences between average parasitised and average uninfected cells"):
-          diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
+    if st.checkbox("Difference between average and variability image; Healthy vs. Rust"):
+      
+      avg_healthy = plt.imread(f"jupyter_notebooks/outputs/{version}/avg_var_Healthy.png")
+      avg_rust = plt.imread(f"jupyter_notebooks/outputs/{version}/avg_var_Rust.png")
+
+      st.warning(
+        f"* We notice the average and variability images did not show "
+        f"patterns where we could intuitively differentiate one from another. " 
+        f"However, a small difference in the colour pigment of the average images is seen for both labels.")
+
+      st.image(avg_healthy, caption='Healthy Plant - Average and Variability')
+      st.image(avg_rust, caption='Rust Plant - Average and Variability')
+      st.write("---")
+
+    if st.checkbox("Differences between average healthy and average powdery plants"):
+          diff_between_avgs = plt.imread(f"jupyter_notebooks/outputs/{version}/avg_diff_label1_label2.png")
+
+          st.warning(
+            f"* We notice this study didn't show "
+            f"patterns where we could intuitively differentiate one from another.")
+          st.image(diff_between_avgs, caption='Difference between average images')
+
+    if st.checkbox("Differences between average healthy and average rust plants"):
+          diff_between_avgs = plt.imread(f"jupyter_notebooks/outputs/{version}/avg_diff_label1_label3.png")
 
           st.warning(
             f"* We notice this study didn't show "
@@ -40,13 +62,13 @@ def page_cells_visualizer_body():
 
     if st.checkbox("Image Montage"): 
       st.write("* To refresh the montage, click on the 'Create Montage' button")
-      my_data_dir = 'inputs/malaria_dataset/cell_images'
-      labels = os.listdir(my_data_dir+ '/validation')
+      my_data_dir = 'inputs/plants_dataset'
+      labels = os.listdir(my_data_dir+ '/Train')
       label_to_display = st.selectbox(label="Select label", options=labels, index=0)
       if st.button("Create Montage"):      
-        image_montage(dir_path= my_data_dir + '/validation',
+        image_montage(dir_path= my_data_dir + '/Train',
                       label_to_display=label_to_display,
-                      nrows=8, ncols=3, figsize=(10,25))
+                      nrows=9, ncols=3, figsize=(10,25))
       st.write("---")
 
 
