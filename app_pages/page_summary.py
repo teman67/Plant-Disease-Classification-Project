@@ -7,29 +7,26 @@ def page_summary_body():
     st.write("### Quick Project Summary")
 
     st.info(
-        f"**General Information**\n"
-        f"* Malaria is a parasitic infection transmitted by the bite of infected female "
-        f"Anopheles mosquitoes.\n"
-        f"* A blood smear sample is collected, mixed with a reagent and examined in "
-        f"the microscope. Visual criteria are used to detect malaria parasites.\n"
-        f"* According to [WHO](https://www.who.int/news-room/fact-sheets/detail/malaria), "
-        f"in 2019, there were an estimated  229 million cases of malaria worldwide and an "
-        f"estimated 409 thousand deaths due to this disease. "
-        f"Children <5 years are the most vulnerable group, accounting for 67% (274 thousand) "
-        f"of all malaria deaths worldwide in 2019.\n\n"
+        f"**Introducing to the Plant Disease Recognition**\n"
+        f"* The Plant Disease Classification System aims to assist farmers and agricultural professionals in identifying and managing plant diseases efficiently.\n"
+        f"* The system will focus on classifying plant images into three categories: Healthy, Rust Affected, and Powdery Mildew Affected.\n"
+        f"* Rusts are plant diseases caused by pathogenic fungi of the order Pucciniales (previously known as Uredinales).\n"
+        f"Rusts get their name because they are most commonly observed as deposits of powdery rust-coloured or brown spores on plant surfaces, [Rust image](https://www.gardeningknowhow.com/wp-content/uploads/2020/11/plant-rust-disease.jpg).\n"
+        f"* Powdery mildew is a fungal disease that affects a wide range of plants. Powdery mildew diseases are caused by many different species of fungi in the order Erysiphales."
+        f"It is important to be aware of powdery mildew and its management as the resulting disease can significantly reduce important crop yields, [Powdery image](https://media.istockphoto.com/photos/grapevine-diseases-downy-mildew-is-a-fungal-disease-that-affects-a-picture-id1161364148?k=6&m=1161364148&s=612x612&w=0&h=BzE8nsZHyGD3y7r1wvKIYDrvqLQcJdk_efFCUNB3134=)\n"
+        f"* Visual criteria are used to detect plant disease.\n"
+        f"\n"
         f"**Project Dataset**\n"
-        f"* The available dataset contains 5643 out of +27 thousand images taken from "
-        f"blood smear workflow (when a drop of blood is taken on a glass slide) of "
-        f"malaria-parasitised and uninfected cells.")
+        f"* The available dataset contains 1532 images divided into train, test, and validation sets.\n"
+        f"* The datasets were taken from [Plant Disease Datasets](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset)")
 
     st.write(
         f"* For additional information, please visit and **read** the "
-        f"[Project README file](https://github.com/Code-Institute-Solutions/WalkthroughProject01/blob/main/README.md).")
+        f"[Project README file](https://github.com/teman67/PP5-Plant-Disease-Classification/blob/main/README.md).")
     
 
     st.success(
         f"The project has 2 business requirements:\n"
-        f"* 1 - The client is interested in having a study to differentiate "
-        f"a parasitized and uninfected cell visually.\n"
-        f"* 2 - The client is interested in telling whether a given cell contains a malaria parasite or not. "
+        f"* 1 - Accurately identify and classify plant diseases based on input images.\n"
+        f"* 2 - Distinguishing between Healthy, Powdery, and Rust plants. "
         )
