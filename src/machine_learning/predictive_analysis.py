@@ -12,34 +12,34 @@ def plot_predictions_probabilities(pred_proba, pred_class):
     Plot prediction probability results
     """
 
-    prob_per_class = pd.DataFrame(
-        data=[0, 0],
-        index={'Parasitised': 0, 'Uninfected': 1}.keys(),
-        columns=['Probability']
-    )
-    prob_per_class.loc[pred_class] = pred_proba
-    for x in prob_per_class.index.to_list():
-        if x not in pred_class:
-            prob_per_class.loc[x] = 1 - pred_proba
-    prob_per_class = prob_per_class.round(3)
-    prob_per_class['Diagnostic'] = prob_per_class.index
+    class_labels = ['Healthy', 'Powdery', 'Rust']
+    prob_per_class = pd.DataFrame({
+        'Diagnostic': class_labels,
+        'Probability': [1 - pred_proba if label != pred_class else pred_proba for label in class_labels]
+    })
 
     fig = px.bar(
         prob_per_class,
         x='Diagnostic',
-        y=prob_per_class['Probability'],
+        y='Probability',
         range_y=[0, 1],
         width=600, height=300, template='seaborn')
     st.plotly_chart(fig)
+
 
 
 def resize_input_image(img, version):
     """
     Reshape image to average image size
     """
-    image_shape = load_pkl_file(file_path=f"outputs/{version}/image_shape.pkl")
+    image_shape = load_pkl_file(file_path=f"jupyter_notebooks/outputs/{version}/image_shape.pkl")
     img_resized = img.resize((image_shape[1], image_shape[0]), Image.LANCZOS)
-    my_image = np.expand_dims(img_resized, axis=0)/255
+    
+    # Apply the same rescaling as during training
+    my_image = np.array(img_resized) / 255.0
+    my_image = np.expand_dims(my_image, axis=0)
+
+    print("Resized Image Shape:", my_image.shape)
 
     return my_image
 
@@ -49,17 +49,20 @@ def load_model_and_predict(my_image, version):
     Load and perform ML prediction over live images
     """
 
-    model = load_model(f"outputs/{version}/malaria_detector_model.h5")
+    model = load_model(f"jupyter_notebooks/outputs/{version}/plant_disease_detector.h5")
 
-    pred_proba = model.predict(my_image)[0, 0]
+    pred_proba = model.predict(my_image)[0]
+    print("Raw Predictions:", pred_proba)
 
-    target_map = {v: k for k, v in {'Parasitised': 0, 'Uninfected': 1}.items()}
-    pred_class = target_map[pred_proba > 0.5]
-    if pred_class == target_map[0]:
-        pred_proba = 1 - pred_proba
+    pred_class_index = np.argmax(pred_proba)
+    pred_class = {0: 'Healthy', 1: 'Powdery', 2: 'Rust'}[pred_class_index]
 
-    st.write(
-        f"The predictive analysis indicates the sample cell is "
-        f"**{pred_class.lower()}** with malaria.")
+    if pred_class == 'Healthy':
+        st.write("The predictive analysis indicates the sample image is healthy.")
+    else:
+        st.write(
+            f"The predictive analysis indicates the sample image is "
+            f"**{pred_class.lower()}** with plant disease.")
 
     return pred_proba, pred_class
+
