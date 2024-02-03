@@ -2,6 +2,7 @@ import streamlit as st
 from PIL import Image
 import numpy as np
 import pandas as pd
+import plotly.express as px
 
 from src.data_management import download_dataframe_as_csv
 from src.machine_learning.predictive_analysis import (
@@ -46,7 +47,12 @@ def page_plant_disease_detector_body():
 
             # Print raw predictions with class names
             class_names = [class_mapping[i] for i in range(len(pred_proba))]
-            st.write("Raw Predictions:", dict(zip(class_names, pred_proba)))
+            raw_predictions_table = pd.DataFrame(list(zip(class_names, pred_proba)), columns=['Class', 'Prediction Probability'])
+            st.table(raw_predictions_table)
+
+            # Create a pie chart to display predictions
+            fig = px.pie(raw_predictions_table, names='Class', values='Prediction Probability', title='Prediction Probabilities')
+            st.plotly_chart(fig)
 
             # Print the predicted class with class name
             predicted_class_name = class_mapping[np.argmax(pred_proba)]
