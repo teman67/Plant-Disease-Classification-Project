@@ -6,7 +6,7 @@ from app_pages.page_summary import page_summary_body
 from app_pages.page_plant_image_visualizer import page_plant_image_visualizer_body
 from app_pages.page_plant_disease_detector import page_plant_disease_detector_body
 from app_pages.page_project_hypothesis import page_project_hypothesis_body
-from app_pages.page_ml_performance import page_ml_performance_metrics
+from app_pages.page_machine_learning_performance import page_machine_learning_performance_metrics
 
 app = MultiPage(app_name="Plant Disease Detector")  # Create an instance of the app
 
@@ -15,6 +15,6 @@ app.add_page("Quick Project Summary", page_summary_body)
 app.add_page("Plant Image Visualiser", page_plant_image_visualizer_body)
 app.add_page("Plant Disease Detection", page_plant_disease_detector_body)
 app.add_page("Project Hypothesis", page_project_hypothesis_body)
-app.add_page("ML Performance Metrics", page_ml_performance_metrics)
+app.add_page("Machine Learning Performance", page_machine_learning_performance_metrics)
 
 app.run()  # Run the app
