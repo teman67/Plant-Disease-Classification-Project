@@ -1,0 +1,2 @@
+# files that are not needed for heroku app
+*.jpg
