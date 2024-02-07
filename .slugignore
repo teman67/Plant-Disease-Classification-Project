@@ -1,2 +1,3 @@
 # files that are not needed for heroku app
-*.jpg
+/inputs/plants_dataset/Test
+/inputs/plants_dataset/Validation
