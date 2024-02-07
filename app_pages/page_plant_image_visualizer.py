@@ -66,7 +66,7 @@ def page_plant_image_visualizer_body():
       labels = os.listdir(my_data_dir+ '/Train')
       label_to_display = st.selectbox(label="Select label", options=labels, index=0)
       if st.button("Create Montage"):      
-        image_montage(dir_path= my_data_dir + '/Train',
+        image_montage(dir_path= my_data_dir + '/Test',
                       label_to_display=label_to_display,
                       nrows=9, ncols=3, figsize=(10,25))
       st.write("---")
