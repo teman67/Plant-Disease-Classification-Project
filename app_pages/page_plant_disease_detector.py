@@ -23,8 +23,8 @@ def page_plant_disease_detector_body():
 
     st.write("---")
 
-    images_buffer = st.file_uploader('Upload blood smear samples. You may select more than one.',
-                                     type=['png', 'jpg'], accept_multiple_files=True)
+    images_buffer = st.file_uploader('Upload plant image(s). You may select more than one.',
+                                     type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
 
     # Define a dictionary to map class indices to class names
     class_mapping = {0: 'Healthy', 1: 'Powdery', 2: 'Rust'}
