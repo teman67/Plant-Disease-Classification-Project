@@ -1,4 +1,5 @@
 # PP5-Plant-Disease-Classification
+### Deployed version at [plant-disease-classification](https://plant-disease-classification-04c8092dc2fe.herokuapp.com/)
 ## How to use this repo
 
 1. Fork this repo and copy the https URL of your forked Walkthrough01 repo
