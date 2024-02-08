@@ -62,7 +62,7 @@ def page_plant_image_visualizer_body():
 
     if st.checkbox("Image Montage"): 
       st.write("* To refresh the montage, click on the 'Create Montage' button")
-      my_data_dir = 'inputs/plants_dataset'
+      my_data_dir = 'inputs/plants_dataset/Merged_split_images_swapped'
       labels = os.listdir(my_data_dir+ '/Test')
       label_to_display = st.selectbox(label="Select label", options=labels, index=0)
       if st.button("Create Montage"):      
