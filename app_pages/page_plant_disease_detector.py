@@ -34,7 +34,7 @@ def page_plant_disease_detector_body():
         for image in images_buffer:
 
             img_pil = (Image.open(image))
-            st.info(f"Blood Smear Sample: **{image.name}**")
+            st.info(f"Plant Image: **{image.name}**")
             img_array = np.array(img_pil)
             st.image(img_pil, caption=f"Image Size: {img_array.shape[1]}px width x {img_array.shape[0]}px height")
 
