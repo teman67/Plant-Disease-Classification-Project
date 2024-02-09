@@ -17,4 +17,14 @@ app.add_page("Plant Disease Detection", page_plant_disease_detector_body)
 app.add_page("Project Hypothesis", page_project_hypothesis_body)
 app.add_page("Machine Learning Performance", page_machine_learning_performance_metrics)
 
+page_bg_img = '''
+<style>
+[data-testid="stReportViewContainer"]{
+background-image: url("https://res.cloudinary.com/dlthn5m1i/image/upload/v1707502369/plant_image_b2cnno.webp");
+background-size: cover;
+} 
+</style>
+'''
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 app.run()  # Run the app
