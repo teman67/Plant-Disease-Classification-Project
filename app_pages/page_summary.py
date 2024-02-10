@@ -26,7 +26,8 @@ def page_summary_body():
     
 
     st.success(
-        f"The project has 2 business requirements:\n"
+        f"The project has 3 business requirements:\n"
         f"* 1 - Accurately identify and classify plant diseases based on input images.\n"
-        f"* 2 - Distinguishing between Healthy, Powdery, and Rust plants. "
+        f"* 2 - Distinguishing between Healthy, Powdery, and Rust plants.\n"
+        f"* 3 - Provide recommendations for treating plants based on the type of disease they are afflicted with."
         )
