@@ -6,6 +6,7 @@ import plotly.express as px
 import requests
 from io import BytesIO
 import os
+import base64
 
 from src.data_management import download_dataframe_as_csv
 from src.machine_learning.predictive_analysis import (
@@ -122,7 +123,17 @@ def page_plant_disease_detector_body():
                             f'<hr style="border: 1px solid black; margin-bottom: 20px;">', unsafe_allow_html=True)
 
         if not df_report.empty:
+            # Add treatment suggestion column to the DataFrame
+            df_report['Treatment Suggestion'] = df_report['Result'].apply(lambda x: treatment_suggestions.get(x, "No treatment needed"))
+
             st.success("Analysis Report")
             st.table(df_report)
-            st.markdown(download_dataframe_as_csv(df_report), unsafe_allow_html=True)
+            
+            # Convert DataFrame to CSV format and provide a download link
+            csv_data = df_report.to_csv(index=False, encoding='utf-8-sig')
+            st.markdown(
+                f'<a href="data:file/csv;base64,{base64.b64encode(csv_data.encode()).decode()}" download="analysis_report.csv">Download Analysis Report as CSV</a>',
+                unsafe_allow_html=True
+            )
+
 
