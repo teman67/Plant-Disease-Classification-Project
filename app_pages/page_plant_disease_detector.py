@@ -28,15 +28,16 @@ def page_plant_disease_detector_body():
     st.write("---")
 
     # Option to upload image files
-    images_buffer = st.file_uploader('Upload plant image(s) or provide URL(s). You may select more than one.',
-                                     type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
+    with st.beta_expander("Upload Plant Image(s)"):
+        images_buffer = st.file_uploader('Upload plant image(s) or provide URL(s). You may select more than one.',
+                                         type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
 
-    # Option to enter image URLs
-    st.write("Enter image URL(s) (one URL per line):")
-    image_urls = st.text_area("")
+        # Option to enter image URLs
+        st.write("Enter image URL(s) (one URL per line):")
+        image_urls = st.text_area("")
 
-    # Button to confirm URLs for image prediction
-    confirm_button = st.button("Confirm URLs")
+        # Button to confirm URLs for image prediction
+        confirm_button = st.button("Confirm URLs")
 
     # Combine uploaded images and images from URLs
     images_from_urls = []
@@ -135,5 +136,3 @@ def page_plant_disease_detector_body():
                 f'<a href="data:file/csv;base64,{base64.b64encode(csv_data.encode()).decode()}" download="analysis_report.csv">Download Analysis Report as CSV</a>',
                 unsafe_allow_html=True
             )
-
-
