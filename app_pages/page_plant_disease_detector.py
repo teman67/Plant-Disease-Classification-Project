@@ -21,7 +21,7 @@ def page_plant_disease_detector_body():
     )
 
     st.write(
-        f"* You can download a set of healthy, powdery and rust images for live prediction. "
+        f"* You can download a set of healthy, powdery, and rust images for live prediction. "
         f"You can download the images from [here](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset?select=Test)."
     )
 
@@ -83,6 +83,14 @@ def page_plant_disease_detector_body():
         for img_pil, filename in zip(images_to_process, image_filenames):
 
             st.info(f"Plant Image - {filename}")
+
+            # Check if the image has three channels (RGB), if not, convert it to RGB mode
+            if img_pil.mode != 'RGB':
+                img_pil = img_pil.convert('RGB')
+                st.markdown('<div style="background-color:#FF0000; padding:10px; border-radius:5px; margin-bottom: 10px;">'
+                            '<span style="color:#FFFFFF"><b>The image does not have RGB mode. Do not worry it will be converted to RGB automatically.</b></span>'
+                            '</div>'
+                            '<hr style="border: 1px solid black; margin-bottom: 10px;">', unsafe_allow_html=True)
 
             # Add a solid line below the image
             st.image(img_pil, caption=f"Image Size: {img_pil.size[0]}px width x {img_pil.size[1]}px height", output_format='PNG')
