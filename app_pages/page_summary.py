@@ -8,8 +8,8 @@ def page_summary_body():
 
     st.info(
         f"**Introducing to the Plant Disease Recognition**\n"
-        f"* The Plant Disease Classification System aims to assist farmers and agricultural professionals in identifying and managing plant diseases efficiently.\n"
-        f"* The system will focus on classifying plant images into three categories: Healthy, Rust Affected, and Powdery Mildew Affected.\n"
+        f"* The Plant Disease Classification System aims to assist farmers and agricultural professionals in identifying and managing plant diseases efficiently in apple trees.\n"
+        f"* The system will focus on classifying apple plant images into three categories: Healthy, Rust Affected, and Powdery Mildew Affected.\n"
         f"* Rusts are plant diseases caused by pathogenic fungi of the order Pucciniales (previously known as Uredinales).\n"
         f"Rusts get their name because they are most commonly observed as deposits of powdery rust-coloured or brown spores on plant surfaces, [Rust image](https://www.gardeningknowhow.com/wp-content/uploads/2020/11/plant-rust-disease.jpg).\n"
         f"* Powdery mildew is a fungal disease that affects a wide range of plants. Powdery mildew diseases are caused by many different species of fungi in the order Erysiphales."
