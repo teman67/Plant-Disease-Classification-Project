@@ -44,12 +44,13 @@ Summary:
 
 ## Hypotheses and how to Validate
 
-1. Cherry leaves with powdery mildew can de differentiated from healthy leaves by their appearance.
-   - This can be verified by creating an average image study and image montage to determine differences in the appearance of healthy leaves and leaves affected with powdery mildew.
-2. Cherry leaves can be determined to be healthy or contain powdery mildew with a degree of 97% accuracy.
-   - This can be verified by evaluating the model on the test dataset, which should achieve at least 97% accuracy.
-3. If the image has a different background to the beige background of the Kaggle dataset the model will predict false results.
-   - This can be verified by testing the model with new pictures of cherry leaves that contain a different background than the dataset images.
+1. The identification of apple leaves affected by powdery mildew or rust from healthy leaves can be achieved through visual examination of their distinct appearances.
+   - This can be confirmed through the creation of an average image study and image montage, allowing for a comparative analysis of the appearance differences between healthy leaves and those affected by powdery mildew or rust.
+2. The determination of apple leaves as healthy or afflicted with powdery mildew or rust can be accomplished with a confidence level of 95% accuracy. 
+   - This assertion can be substantiated by assessing the model's performance on the test dataset, aiming for a minimum accuracy rate of 95%.
+3. The model's prediction accuracy may be compromised if the images of apple leaves contain backgrounds different from the beige background of the Kaggle dataset. 
+   - o confirm this limitation, the model should be tested with new pictures of apple leaves featuring backgrounds distinct from those in the dataset images.
+4. It is advisable to use images in RGB mode for improved prediction accuracy. Nevertheless, if images are not already in RGB mode, the trained model will automatically convert them to RGB mode for processing.
 
 [Table Of Contents](#table-of-contents)
 
@@ -57,29 +58,44 @@ Summary:
 
 - Business Requirement 1: Data Visualization
 
-  - The 'mean' and 'standard deviation' images for healthy and powdery mildew infected leaves will be displayed.
-  - The difference between an average healthy leaf and an average powdery mildew infected leaf will be displayed.
-  - An image montage for both healthy leaves and powdery mildew infected leaves will be displayed.
+  - The dashboard will showcase the 'mean' and 'standard deviation' images for both healthy and powdery mildew-infected apple leaves or for both healthy and rust infected apple leaves.
+  - Additionally, it will display the contrast between an average healthy leaf and an average leaf infected with powdery mildew or rust.
+  - Furthermore, an image montage featuring healthy leaves, leaves affected by powdery mildew, and rust leaves will be presented for comparison.
 
 - Business Requirement 2: Classification
 
-  - Create and fit a machine learning model to predict if a given leaf is healthy or infected with powdery mildew. This will be a binary classification task and will require to set the image shape.
-  - The predictions should have a 97% accuracy level.
-
+  - Create and fit a machine learning model to predict if a given leaf is healthy or infected with powdery mildew or rust. This will be a classification task with three classes and will require to set the image shape.
+  - The model provides treatment recommendations to users based on the type of plant disease identified.
+  - The predictions should have a 95% accuracy level.
+  
 - Business Requirement 3: Report
-  - A report is available and downloadable with the predicted status of all uploaded images.
+  - A downloadable report containing the predicted status of all uploaded images is available for users.
 
 [Table Of Contents](#table-of-contents)
 
 ## ML Business Case
 
-- Create a machine Learning model to predict if a leaf is healthy or infected with powdery mildew, based on an image dataset of historical data containing both healthy and powdery mildew infected leaves. It is a supervised, 2-class, single-label, classification model.
-- The model outcome will ideally provide the client with a reliable and faster way to diagnose if a tree is infected with powdery mildew or not.
-- The model will be successful if an accuracy of at least 97% is obtained on the test set.
-- The model output is defined as a flag, indicating if the leaf is infected with powdery mildew or not and the associated probability of being infected or not. The farmers will take a picture of a leaves and upload them to the App.
-- Heuristics: The current detection process is manual verification, where an employee spends around 30 minutes in each tree, taking a few samples of tree leaves and verifying visually if the leaf tree is healthy or has powdery mildew. With thousands of trees there is the possibility to produce inaccurate diagnostics due to human errors.
-- The dataset contains 4208 images taken from the client's crop fields. The images show healthy cherry leaves and cherry leaves that have powdery mildew.
-- The dataset is located on [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves).
+- To create a machine learning model for leaf classification, particularly distinguishing between healthy leaves and those infected with powdery mildew or rust, typically the following steps are followed:
+1. Data Collection: Gather a dataset containing images of leaves categorized as healthy, powdery mildew-infected, and rust-infected. Ensure each category is well-represented in the dataset.
+
+2. Data Preprocessing: Preprocess the images to ensure uniformity in size, color space, and quality. This step may involve resizing, normalization, and augmentation techniques to enhance the dataset's diversity.
+
+3. Feature Extraction: Use techniques like convolutional neural networks (CNNs) to extract meaningful features from the images. CNNs are particularly effective for image classification tasks due to their ability to capture spatial hierarchies.
+
+4. Model Selection: Choose an appropriate machine learning model architecture for classification. Common choices for image classification tasks include CNN-based architectures such as VGG, ResNet, or custom-designed models.
+
+5. Model Training: Split the dataset into training and validation sets. Train the selected model on the training set while validating its performance on the validation set. Fine-tune hyperparameters to optimize the model's performance.
+
+6. Model Evaluation: Evaluate the trained model's performance using appropriate evaluation metrics such as accuracy, precision, recall, and F1-score on the validation set.
+
+7. Model Testing: Once satisfied with the model's performance, test it on a separate test dataset to assess its generalization ability. This step ensures that the model can accurately classify unseen data.
+
+8. Deployment: Deploy the trained model into production, making it available for inference on new leaf images. Integrate the model into an application or system where users can upload leaf images and receive predictions on their health status.
+
+9. Monitoring and Maintenance: Continuously monitor the model's performance in production and update it periodically with new data to ensure its effectiveness over time.
+
+- The dataset contains 1532 images taken from the client's crop fields. The images show healthy apple leaves, apple leaves that have powdery mildew or rust.
+- The dataset is located on [Kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset).
 
 [Table Of Contents](#table-of-contents)
 
