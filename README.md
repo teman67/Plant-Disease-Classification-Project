@@ -198,7 +198,7 @@ The model architecture was iteratively refined through trial and error, aiming t
 
 Based on the evaluation results, version 3 was selected for integration into the dashboard. Detailed insights into the testing phase can be found in the [testing section](#testing).
 
-![Model](readme/ML_model.png.png)
+![ML_Model](/readme/ML_model.png)
 
 ## Project Features
 
@@ -206,64 +206,73 @@ Based on the evaluation results, version 3 was selected for integration into the
 
 <summary>Navigation</summary>
 
-The navigation bar is visible on all dashboard pages and provides easy links to other pages.
+The navigation bar remains visible across all pages of the dashboard, offering convenient access to various sections.
 
-![Menu](readme_files/menu.png)
-
-</details>
-
-<details>
-
-<summary>Page 1: Introduction</summary>
-
-The introduction page provides the user with information about powdery mildew, the project summary, the dataset and the business requirements. There is also a link to this ReadMe file.
-
-![Introduction](readme_files/introduction.png)
+![Menu](/readme/menu.png)
 
 </details>
 
 <details>
 
-<summary>Page 2: Leaf Visualizer</summary>
+<summary>Page 1: Quick Project Summary</summary>
 
-The leaf visualizer page provides the user with the results of the study to visually differentiate a healthy cherry leaf from one with powdery mildew. It was determined that healthy leaves and infected leaves could be distinguished by their appearance.
+The Quick Project Summary page furnishes users with details regarding powdery mildew, rust, a project summary, dataset information, and the business requirements. Additionally, a hyperlink to access this ReadMe file is provided.
 
-The page gives the user the options to view the difference between average and variability images, the differences between average infected and average uninfected leaves and an image montage of healthy or infected leaves.
-
-![Visualizer_1](readme_files/visualizer_1.png)
-![Visualizer_2](readme_files/visualizer_2.png)
-![Visualizer_3](readme_files/visualizer_3.png)
-![Visualizer_4](readme_files/visualizer_4.png)
+![Page_1](/readme/Page_1.png)
 
 </details>
 
 <details>
 
-<summary>Page 3: Powdery Mildew Detector</summary>
+<summary>Page 2: Plant image Visualizer</summary>
 
-The detector page allows the user to upload images of cherry leaves to determine if the leaf is healthy or infected with powdery mildew. Each image is presented with a prediction and a graph depicting the probability of the predictions accuracy. There is then a report detailing the image name, probability accuracy and result. This report is available to download into a .csv file, which can be viewed easily in Microsoft Excel.
+The leaf visualizer page presents users with the outcomes of the study, aiding in visually distinguishing between a healthy apple leaf and one affected by powdery mildew or rust. It was established that healthy and infected leaves exhibit discernible differences in appearance.
 
-![Detector](readme_files/detector.png)
+On this page, users have the options to:
 
-</details>
+  - View the disparity between average and variability images.
+  - Compare the distinctions between average infected and average uninfected leaves.
+  - Access an image montage showcasing healthy or infected leaves.
 
-<details>
-
-<summary>Page 4: Project Hypothesis</summary>
-
-The hypothesis page provides the user with details of the project hypotheses and their outcomes.
-
-![Hypothesis](readme_files/hypothesis.png)
+![Page_2](/readme/Page_2.png)
 
 </details>
 
 <details>
 
-<summary>Page 5: Performance Metrics</summary>
+<summary>Page 3: Plant Disease Detector</summary>
 
-The performance metrics page provides the user with the Machine Learning model dataset distribution, performance plots and performance on the test dataset.
+On the detector page, users have the capability to upload images of apple leaves to determine their health status, whether they are healthy or infected with powdery mildew or rust. Following the upload, each image is accompanied by a prediction statement and a graphical representation depicting the probability of the prediction's accuracy. Moreover, treatment suggestions tailored to the respective plant diseases are provided for user reference. Finally, a downloadable report is available, offering comprehensive details including the image name, probability accuracy, result, and corresponding treatment suggestions in a .csv format.
 
-![Performance](readme_files/performance.png)
+![Page_3](/readme/Page_3.png)
+
+</details>
+
+<details>
+
+<summary>Page 4: Project Hypothesis and Validation</summary>
+
+The hypothesis page furnishes users with comprehensive details regarding the project hypotheses and their respective outcomes.
+
+![Page_4](/readme/Page_4.png)
+
+</details>
+
+<details>
+
+<summary>Page 5: Machine Learning Performance</summary>
+
+The performance metrics page offers users insights into various aspects of the machine learning model's performance, including:
+
+1. Dataset distribution: Visual representation of the distribution of the dataset used for training, validation, and testing.
+
+2. Performance plots: Graphical representations illustrating the performance metrics such as accuracy, loss, precision, recall, and F1-score during model training and evaluation.
+
+3. Confusion matrix: A tabular representation that displays the model's predictions versus the actual labels across different classes, providing a comprehensive overview of the model's performance in terms of true positives, true negatives, false positives, and false negatives.
+
+4. Performance on the test dataset: Summary of the model's performance metrics specifically on the test dataset, providing users with an understanding of how well the model generalizes to unseen data.
+
+![Page_5](/readme/Page_5.png)
 
 </details>
 
