@@ -155,65 +155,50 @@ Summary:
 
 ### CRISP-DM
 
-CRISP-DM (Cross Industry Standard Process for Data Mining) methodology was used for the data mining project. There are six stages to the process and have the following relationship:
+CRISP-DM (Cross Industry Standard Process for Data Mining) methodology was employed for the data mining project, consisting of six stages with the following interrelated relationship:
 
-![CRISP_DM](readme_files/crisp-dm.png)
+![CRISP_DM](readme/crisp-dm.png)
 
 ### Agile
 
-An agile approach was implemented for the project using GitHub projects with the aid of Milestones and Issues. Each Issue detailed the relevant tasks to be completed.
+For the project, an agile approach was adopted, facilitated by GitHub projects with the assistance of Milestones and Issues. Each Issue comprehensively outlined the relevant tasks to be completed.
 
-The project board can be viewed [here](https://github.com/users/Porsil/projects/7)
+The project board can be viewed [here](https://github.com/teman67/PP5-Plant-Disease-Classification/issues)
 
-[Table Of Contents](#table-of-contents)
+### Image preparation
+
+The original images [Kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset) possess a large size and resolution of (2700, 3986, 3). To address this, we utilize the PIL package to resize and adjust the images, reducing their dimensions to (173, 256, 3). It's crucial to maintain a fixed aspect ratio for each image during this process.
 
 ## Rationale for the Model
+- The rationale behind selecting a specific model for a machine learning task is typically based on several factors:
 
-A good model generates accurate predictions as the machine learning model generalizes well from the training data and allows for accurate predictions on unseen data. A good model is also as simple as possible and does not have an unnecessarily complex neural network or high computational power.
+  - A good model excels in generating accurate predictions by effectively generalizing from the training data, thus enabling precise predictions on unseen data. Additionally, it maintains simplicity, avoiding unnecessary complexity in neural network architecture or computational power.
 
-When a model trains for too long on the training dataset or if the model is too complex, it can start to learn the noise or irrelevant information from the dataset. This causes the model to fit too closely to the training set and become overfitted where it is unable to generalize well to new data. Overfitting can be detected by seeing how the model performs on the validation and test datasets.
+  - However, when a model undergoes excessive training or becomes overly complex, it risks learning noise or irrelevant information from the dataset. This phenomenon, known as overfitting, results in the model fitting too closely to the training set, leading to poor generalization on new data. Overfitting can be identified by assessing the model's performance on validation and test datasets.
 
-Underfitting can also occur where the model cannot determine a meaningful relationship between the input and output data. Underfitting can be detected by seeing how the model performs on the training dataset, as the accuracy of the training dataset will be low. This is also be translated into low accuracy over the validation and test datasets.
+  - Conversely, underfitting occurs when the model fails to discern meaningful relationships between input and output data. Detection of underfitting involves evaluating the model's performance on the training dataset, typically indicated by low accuracy. This deficiency also translates to low accuracy across validation and test datasets.
 
 ### Model Creation
 
-As this project is an image classification task, a Convolutional Neural Network (CNN) will be created using Tensorflow. The project requires a binary image classification model as the outcome can be one of two choices: healthy or infected.
+- For this image classification project, a Convolutional Neural Network (CNN) will be implemented using TensorFlow. The task involves classifying images into one of three categories: healthy, powdery mildew-infected, or rust-infected. Here's a breakdown of the model:
 
-There are two choices available for binary classification tasks. 1 neuron with sigmoid as activation function or 2 neurons with softmax as activation function. Both functions were used to create and fit models during the testing phase.
+  - The model is initiated using the Sequential() function, indicating a sequential layer-by-layer architecture.
 
-The model was created by trial and error, considering any underfitting or overfitting of previous versions to find a model that has a normal fit, refer to [testing](#testing). Based on the model evaluation data, version 6 was chosen for the dashboard.
+  - Four convolutional layers (Conv2D) are added successively to extract features from input images. Each convolutional layer has a 3x3 filter size and employs the Rectified Linear Unit (ReLU) activation function to introduce non-linearity. The first layer specifies an input shape of (IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS).
 
-The model created is a sequential model containing the following:
+  - After each convolutional layer, a max-pooling layer (MaxPooling2D) with a 2x2 window size is added to downsample the feature maps, retaining the most salient features.
 
-- Convolutional layers: used to select the dominant pixel value from the non-dominant pixels in images using filters to find patterns (or features) in the image.
+  - Following the convolutional and max-pooling layers, a Flatten() layer is included to flatten the feature maps into a one-dimensional vector, preparing them for input to the dense layers.
 
-  - 3 Convolution layers were used in the model.
-  - Conv2D was chosen as the images are 2D.
-  - The number of filters chosen was 32, 16 then 8 to keep the complexity low.
-  - The kernel size used was 3x3 as this is regarded as the most efficient.
-  - Activation 'Relu' used as it is simple and effective with hidden layers of a binary classification model.
+  - Two fully connected (Dense) layers are added with 128 units each, employing ReLU activation functions. These layers serve as intermediate layers for feature transformation and extraction.
 
-- Pooling layers: used to reduce the image size by extracting only the dominant pixels (or features) from the image.
-  - After each convolution layer is a pooling layer. The combination of these two layers removes the nonessential part of the image and reduces complexity.
-  - MaxPooling was used as this selects the brighter pixels from the image i.e. the white (brighter pixel) powdery mildew on a green (darker pixels) leaf.
-- Flatten layer: used to flatten the matrix into a vector, which means a single list of all values, that is fed into a dense layer.
+  - The final dense layer consists of 3 units, representing the number of classes (Healthy, Powdery, Rust) in the classification task. It uses the softmax activation function to output probabilities for each class, ensuring the sum of probabilities across all classes equals 1.
 
-- Dense layer: a fully-connected neural network layer.
+The model architecture was iteratively refined through trial and error, aiming to address issues such as underfitting or overfitting observed in previous versions. The chosen model version, referred to as version 3 in the evaluation phase, demonstrated a balanced fit.
 
-  - 64 nodes were chosen through the trial and error process.
-  - Activation 'Relu' used.
+Based on the evaluation results, version 3 was selected for integration into the dashboard. Detailed insights into the testing phase can be found in the [testing section](#testing).
 
-- Dropout layer: a regularization layer used to reduce the chance of overfitting the neural network.
-
-  - 0.3 was used, which was deemed appropriate for the number of images available.
-
-- Output layer:
-  - Softmax was chosen as the activation function through the trial and error process. As such, 2 nodes were chosen as there are two output possibilities and categorical_crossentropy was chosen for loss.
-  - Adam optimizer was chosen through the trial and error process.
-
-![Model](readme_files/model.png)
-
-[Table Of Contents](#table-of-contents)
+![Model](readme/ML_model.png.png)
 
 ## Project Features
 
