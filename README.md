@@ -276,69 +276,73 @@ The performance metrics page offers users insights into various aspects of the m
 
 </details>
 
-[Table Of Contents](#table-of-contents)
-
 ## Project Outcomes
 
 ### Business Requirement 1: Data Visualization
 
-The visualization study can be viewed on the [Leaf Visualizer page](https://cherry-leaf-mildew-detection.herokuapp.com/) of the dashboard. The study shows the mean and variability images and an image montage of both healthy and infected leaves. The concludes that healthy leaves and infected leaves can be distinguished by their appearance as leaves infected with powdery mildew exhibit white marks.
+The visualization study can be accessed via the [Plant image Visualizer page](https://plant-disease-classification-04c8092dc2fe.herokuapp.com/) on the dashboard. This study showcases the mean and variability images alongside an image montage featuring both healthy and infected leaves. The study concludes that distinguishing between healthy and infected leaves is possible based on appearance.
 
 ### Business Requirement 2: Classification
 
-The classification tool can found on the [Powdery Mildew Detector page](https://cherry-leaf-mildew-detection.herokuapp.com/) of the dashboard. The user is able to upload images of cherry leaves and is given a classification prediction for each image along with a probability graph. The predictions have an accuracy level of above 97%.
+- The classification tool is accessible on the [Plant Disease Detector page](https://plant-disease-classification-04c8092dc2fe.herokuapp.com/) of the dashboard. Users can upload images of apple leaves and receive a classification prediction for each image, accompanied by a probability graph. Notably, the predictions boast an accuracy level exceeding 95%.
+- The prediction is accompanied by suggestions for plant diseases.
 
 ### Business Requirement 3: Report
 
-The report can be viewed on the [Powdery Mildew Detector page](https://cherry-leaf-mildew-detection.herokuapp.com/) of the dashboard once images have been classified. The user is presented with a table that shows the image name, probability % and result for each uploaded image. The user can also click 'Download Report' which downloads the report to a .csv file, which can be opened easily in Microsoft Excel.
-
-[Table Of Contents](#table-of-contents)
+The report is accessible on the [Plant Disease Detector page](https://plant-disease-classification-04c8092dc2fe.herokuapp.com/) of the dashboard following the classification of images. Users are presented with a table displaying the image name, probability percentage, corresponding treatment suggestions and result for each uploaded image. Additionally, users can download the report by clicking 'Download Report', saving it as a .csv file.
 
 ## Hypothesis Outcomes
 
 ### Hypothesis 1
 
-- Cherry leaves with powdery mildew can de differentiated from healthy leaves by their appearance.
+- The hypothesis that apple leaves with powdery mildew or rust can be differentiated from healthy leaves by their appearance was confirmed through various visual analyses.
 
-This hypothesis was validated by creating an average image study and image montage to determine differences in the appearance of healthy leaves and leaves affected with powdery mildew.
+An average image study and image montage were conducted to discern disparities between healthy leaves and those affected by powdery mildew or rust. The image montage vividly illustrated that leaves infected with powdery mildew are distinguishable due to the presence of white deposits on the affected leaves. Affected leaves with rust are distinguishable by the presence of yellow or orange spots on the plants.
 
-An image montage shows that leaves infected with powdery mildew are easily identified due to the present of white deposits on the infected leaves.
-The average and variability images showed a pattern within the center of the leaf related to colour pigmentation. This is most notable in the variability images where the center of the healthy leaves looks black whereas the center for the infected leaves is not.
+Furthermore, the average and variability images revealed distinctive patterns, particularly within the center of the leaf, relating to color pigmentation. Notably, the variability images showcased a discernible difference wherein the center of healthy leaves appeared black, whereas the center of infected leaves did not exhibit the same characteristic.
 
-![Variability](readme_files/variability.png)
+![Variability](/readme/Variability.png)
 
-The difference between averages study did not show patterns where we could intuitively differentiate one from another.
-The image montage, average and variability images and the difference between averages study can be viewed by selecting the 'Leaf Visualizer' option on the sidebar menu.
+The difference between averages study did not reveal discernible patterns that would facilitate intuitive differentiation between healthy and infected leaves. However, the image montage, average and variability images, and the difference between averages study can be accessed by selecting the 'Plant image Visualizer' option on the sidebar menu.
 
-Conclusion: This hypothesis was correct and healthy leaves and infected leaves can be distinguished by their appearance as leaves infected with powdery mildew exhibit white marks.
+In conclusion, the hypothesis was validated, confirming that healthy leaves and infected leaves can indeed be distinguished by their appearance. Leaves affected with powdery mildew exhibit distinctive white marks, while rust manifests as yellow or orange spots.
 
 ### Hypothesis 2
 
-- Cherry leaves can be determined to be healthy or contain powdery mildew with a degree of 97% accuracy.
+- Apple leaves can be accurately classified as healthy or infected with powdery mildew or rust with a remarkable degree of 95% accuracy.
 
-This was validated by evaluating the model on the test dataset.
+This assertion was substantiated by evaluating the model's performance on the test dataset.
 
-The model accuracy was trained at over 99% with the train and validation datasets, and 99% accuracy was achieved on the test dataset.
+The model exhibited outstanding accuracy during training, surpassing 95% with both the train and validation datasets. Furthermore, it achieved a remarkable 95% accuracy on the test dataset.
 
-Conclusion: This hypothesis was correct as the model was successfully trained using a Convolutional Neural Network to classify if an image of a cherry leaf is healthy or infected with powdery mildew with a degree of accuracy of above 99%.
+In conclusion, this hypothesis was verified as the model, trained using a Convolutional Neural Network, successfully classified images of cherry leaves as healthy or infected with powdery mildew or rust with an accuracy exceeding 95%.
 
 ### Hypothesis 3
 
-- If the image has a different background to the beige background of the Kaggle dataset the model will predict false results.
+- If the image contains a background that differs from the beige background of the Kaggle dataset, the model may produce inaccurate predictions.
 
-This was validated by uploading the following images to the dashboard:
+This assertion was confirmed through the uploading of the following images to the dashboard:
 
-![Hypothesis Pictures](readme_files/hypothesis3_images.png)
+![Hypothesis Pictures](/readme/test_plants.png)
 
-The results were 7 correct predictions and 3 incorrect predictions as follows:
+The results were 5 correct predictions and 5 incorrect predictions as follows:
 
-![Hypothesis Results](readme_files/hypthesis3_results.png)
+| Image Numbers | Classification |
+|---------------|----------------|
+| 1             | Healthy        |
+| 2             | Healthy        |
+| 3             | Healthy        |
+| 4             | Rust           |
+| 5             | Rust           |
+| 6             | Rust           |
+| 7             | Rust           |
+| 8             | Healthy        |
+| 9             | Healthy        |
+| 10            | Rust           |
 
-This insight will be taken to the client to ensure they are aware of the image background requirements for the best model performance.
+This insight will be conveyed to the client to ensure they understand the significance of adhering to the image background requirements for optimal model performance.
 
-Conclusion: This hypothesis was correct as the model incorrectly predicted the classification of 3 of the 10 images.
-
-[Table Of Contents](#table-of-contents)
+In conclusion, this hypothesis was validated as the model inaccurately predicted the classification of 5 out of 10 images.
 
 ## Testing
 
