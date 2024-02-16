@@ -5,6 +5,8 @@
 
 The Plant Disease Classification dashboard application utilizes Machine Learning technology to allow users to upload images of plant leaves for analysis. It assesses whether the plant is healthy or afflicted with powdery mildew or Rust, providing users with a downloadable report summarizing the findings.
 
+![Home Screen](/readme/First_page.png)
+
 ### Deployed version at [Plant Disease Classification](https://plant-disease-classification-04c8092dc2fe.herokuapp.com/)
 
 ## Table of Contents
@@ -101,12 +103,12 @@ Summary:
 
 ## User Stories
 
-- As a client I want an easy to use dashboard, so that I can view and understand the date, model and outcomes.
-- As a client I want to view the average and variability images of healthy cherry leaves and cherry leaves infected with powdery mildew, so that I can visually differentiate between the two classifications.
-- As a client I want to view the difference between an average healthy cherry leaf and an average cherry leaf infected with powdery mildew, so that I can visually differentiate between the two classifications.
-- As a client I want to view an image montage for both healthy cherry leaves and cherry leaves infected with powdery mildew, so that I can visually differentiate between the two classifications.
-- As a client I want to upload images of cherry leaves and be given a prediction of the classification with above 97% accuracy, so that I can quickly determine the health of a given cherry tree.
-- As a client I want a downloadable report of the predictions given, so that I can retain a copy of the predictions.
+- As a client I require an intuitive dashboard for easy navigation, allowing me to effortlessly access and comprehend data, models, and outcomes.
+- As a client I need the capability to observe average and variable images of both healthy apple leaves and those infected with powdery mildew and rust. This feature will enable me to visually distinguish between the three categories.
+- As a client I seek the ability to view a visual montage comprising images of healthy apple leaves and those infected with powdery mildew or rust. This feature will facilitate a clearer differentiation between the three classifications.
+- As a client I desire the functionality to upload images of apple leaves and receive classification predictions with an accuracy exceeding 95%. This will allow for swift assessment of apple tree health based on the provided predictions.
+- As a client I require treatment suggestions based on identified plant diseases to effectively address any issues affecting my plants' health.
+- As a client I require the facility to download a report containing the provided predictions, ensuring that I have a record of the outcomes for future reference.
 
 [Table Of Contents](#table-of-contents)
 
@@ -114,38 +116,40 @@ Summary:
 
 ### Page 1: Introduction
 
-- General Information about powdery mildew.
-- Details of the project dataset.
-- Business requirements.
-- Link to this Readme file
+- Provide an overview of powdery mildew and rust, accompanied by sample images for illustration.
+- Outline the specifics of the dataset utilized in the project.
+- Define the business requirements.
+- Include a hyperlink to access this Readme file.
 
-### Page 2: Leaf Visualizer
+### Page 2: Plant leaves Visualizer
 
-- This page will fulfil business requirement 1.
-- Show the difference between the average and variability image.
-- Show the difference between average healthy leaves and leaves infected with powdery mildew.
-- Show an image montage of healthy leaves and leaves infected with powdery mildew.
+- This page is designed to meet Business Requirement 1 by showcasing the following:
+  - Illustrating the disparity between the average and variability image.
+  - Displaying the contrast between average healthy leaves and leaves infected with powdery mildew or rust.
+  - Presenting an image montage featuring for healthy leaves, leaves infected with powdery mildew, and leaves infected by rust.
 
-### Page 3: Powdery Mildew Detector
+### Page 3: Plant Diseases Detector
 
-- This page will fulfil business requirements 2 and 3 by predicting if a leaf is infected with powdery mildew or not.
-- Link to download a set of images showing healthy leaves and leaves infected with powdery mildew for live prediction.
-- User Interface with a file uploader widget to allow the user to upload multiple leaf images. It will display the image and a prediction statement, indicating if the leaf is infected with powdery mildew or not and the probability associated with this prediction.
-- Report with image name and prediction result.
-- Download button to download the report.
+- This page is designed to meet Business Requirements 2 and 3, offering the following features:
+  - Prediction of whether a leaf is infected with powdery mildew or rust.
+  - Provision of a link to download a set of images displaying healthy leaves and leaves infected with powdery mildew or rust for live prediction.
+  - User Interface featuring a file uploader widget for multiple leaf image uploads. It displays each uploaded image along with a prediction statement indicating if the leaf is infected with powdery mildew or rust, along with the associated probability.
+  - In addition to uploading images directly from their device, users can also copy and paste image URL(s) from external sources for live prediction.
+  - Generation of a report containing image names and prediction results.
+  - Offering treatment recommendations tailored to each plant disease.
+  - Download button provided to download the generated report.
 
 ### Page 4: Project Hypothesis and Validation
 
 - Detail each [hypotheses](#hypotheses-and-how-to-validate), how it was validated and the conclusion.
 
-### Page 5: ML Performance Metrics
+### Page 5: Machine Learning Performance Metrics
 
-- Details of the model performance including:
-  - Label frequencies for train, validation and test sets
-  - Model history - accuracy and losses
-  - Model evaluation result
-
-[Table Of Contents](#table-of-contents)
+- Providing comprehensive details on the model performance, including:
+  - Label frequencies for the training, validation, and test sets.
+  - Model history depicting accuracy and losses during training.
+  - Evaluation results of the model's performance.
+  - Offering metrics that demonstrate the performance of the model.
 
 ## Methodology
 
