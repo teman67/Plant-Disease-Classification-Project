@@ -42,8 +42,6 @@ Summary:
 - The client is interested in a dashboard that predicts if a apple leaf is healthy or infeacted by powdery mildew or rust by 95% accuracy.
 - The client would like to receive some treatments based on the type of plant diseases.
 
-[Table Of Contents](#table-of-contents)
-
 ## Hypotheses and how to Validate
 
 1. The identification of apple leaves affected by powdery mildew or rust from healthy leaves can be achieved through visual examination of their distinct appearances.
@@ -54,7 +52,6 @@ Summary:
    - o confirm this limitation, the model should be tested with new pictures of apple leaves featuring backgrounds distinct from those in the dataset images.
 4. It is advisable to use images in RGB mode for improved prediction accuracy. Nevertheless, if images are not already in RGB mode, the trained model will automatically convert them to RGB mode for processing.
 
-[Table Of Contents](#table-of-contents)
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
@@ -114,7 +111,7 @@ Summary:
 
 ## Dashboard Design - Streamlit App User Interface
 
-### Page 1: Introduction
+### Page 1: Quick Project Summary
 
 - Provide an overview of powdery mildew and rust, accompanied by sample images for illustration.
 - Outline the specifics of the dataset utilized in the project.
@@ -362,33 +359,38 @@ The version used for the dashboard was version 6, as this showed a normal fit wi
 
 | Page         |          Feature          | Pass / Fail |
 | ------------ | :-----------------------: | :---------: |
-| Introduction |          Content          |    Pass     |
-| Introduction |         Nav link          |    Pass     |
-| Introduction |        ReadMe link        |    Pass     |
-| Visualizer   |          Content          |    Pass     |
-| Visualizer   |    1st checkbox ticked    |    Pass     |
-| Visualizer   |   1st checkbox unticked   |    Pass     |
-| Visualizer   |    2nd checkbox ticked    |    Pass     |
-| Visualizer   |   2nd checkbox unticked   |    Pass     |
-| Visualizer   |    3rd checkbox ticked    |    Pass     |
-| Visualizer   |   3rd checkbox unticked   |    Pass     |
-| Visualizer   |      Healthy montage      |    Pass     |
-| Visualiser   |     Infected montage      |    Pass     |
-| Detector     |          Content          |    Pass     |
-| Detector     |        Kaggle link        |    Pass     |
-| Detector     | Drag and drop file upload |    Pass     |
-| Detector     |    Browse file upload     |    Pass     |
-| Detector     |   Show uploaded images    |    Pass     |
-| Detector     |     Show predictions      |    Pass     |
-| Detector     |  Show probability graph   |    Pass     |
-| Detector     |      Analysis report      |    Pass     |
-| Detector     |    Downloadable report    |    Pass     |
-| Hypothesis   |          Content          |    Pass     |
-| Performance  |          Content          |    Pass     |
+| Quick Project Summary |          Content          |    Pass     |
+| Quick Project Summary |         Nav link          |    Pass     |
+| Quick Project Summary |        ReadMe link        |    Pass     |
+| Plant Visualizer   |          Content          |    Pass     |
+| Plant Visualizer   |    1st checkbox ticked    |    Pass     |
+| Plant Visualizer   |   1st checkbox unticked   |    Pass     |
+| Plant Visualizer   |    2nd checkbox ticked    |    Pass     |
+| Plant Visualizer   |   2nd checkbox unticked   |    Pass     |
+| Plant Visualizer   |    3rd checkbox ticked    |    Pass     |
+| Plant Visualizer   |   3rd checkbox unticked   |    Pass     |
+| Plant Visualizer   |    4rd checkbox ticked    |    Pass     |
+| Plant Visualizer   |   4th checkbox unticked   |    Pass     |
+| Plant Visualizer   |    5th checkbox ticked    |    Pass     |
+| Plant Visualizer   |   5th checkbox unticked   |    Pass     |
+| Plant Visualizer   |      Healthy montage      |    Pass     |
+| Plant Visualiser   |  Powdery Infected montage |    Pass     |
+| Plant Visualizer   |   Rust Infected montage   |    Pass     |
+| Plant Detector     |          Content          |    Pass     |
+| Plant Detector     |        Kaggle link        |    Pass     |
+| Plant Detector     |       Dropdown menu       |    Pass     |
+| Plant Detector     |    Browse file upload     |    Pass     |
+| Plant Detector     |    Copy & Paste URL(s)    |    Pass     |
+| Plant Detector     |   Show uploaded images    |    Pass     |
+| Plant Detector     |     Show predictions      |    Pass     |
+| Plant Detector     |  Show probability graph   |    Pass     |
+| Plant Detector     |     Suggest treatment     |    Pass     |
+| Plant Detector     |      Analysis report      |    Pass     |
+| Plant Detector     |    Downloadable report    |    Pass     |
+| Project Hypothesis   |          Content          |    Pass     |
+| Machine Learning Performance  |          Content          |    Pass     |
 
 </details>
-
-[Table Of Contents](#table-of-contents)
 
 ## Bugs
 
