@@ -345,11 +345,19 @@ In conclusion, this hypothesis was validated as the model inaccurately predicted
 
 <details>
 
-<summary>ML Model Testing</summary>
+<summary>Low Accuracy of ML model</summary>
 
-The model testing can be viewed [here](readme_files/model_testing.pdf).
+The first ML model had low accuracy and high loss as shown below:
 
-The version used for the dashboard was version 6, as this showed a normal fit with no sign of overfitting and had an accuracy level of above 97% to meet business requirement 2.
+![Accuracy](/jupyter_notebooks/outputs/v1/model_training_acc_old.png)
+
+![Loss](/jupyter_notebooks/outputs/v1/model_training_losses_old.png)
+
+I discovered that the reason for the issue was due to using: `model.add(Dense(1, activation='sigmoid'))`. To enhance my accuracy, I replaced it with `model.add(layers.Dense(3, activation='softmax'))`.
+
+Using a sigmoid activation function in the output layer along with a single output neuron is typically suitable for binary classification tasks, where the goal is to predict between two classes (e.g., healthy vs. diseased). However, when dealing with multiple classes (e.g., healthy, powdery mildew, rust), it's recommended to use the softmax activation function in the output layer and have one output neuron per class.
+
+Therefore, for a classification problem with three classes, it's preferable to use the softmax activation function in the output layer and have three output neurons, each representing one of the classes. This allows the model to output a probability distribution over the three classes, making it more appropriate for multi-class classification tasks.
 
 </details>
 
@@ -400,9 +408,7 @@ The version used for the dashboard was version 6, as this showed a normal fit wi
 
 <summary>Gitpod & Github</summary>
 
-Several issues were encountered with the Gitpod IDE.
-
-Firstly, the default python version on gitpod is 3.11 and most of the packages in requirements.txt file could not be installed using python version 3.11. To solve the isuue, I first upgraded the python version using: 'pyenv install 3.8.18'. Then to change the default python version from 3.11 to 3.8.18, I use: 'pyenv global 3.8.18'. Then I run pip3 install -r requirements.txt to install all packages. 
+Firstly, the default python version on gitpod is 3.10.12 and most of the packages in requirements.txt file could not be installed using python version 3.10.12. To solve the isuue, I first upgraded the python version using: 'pyenv install 3.8.18'. Then to change the default python version from 3.11 to 3.8.18, I use: 'pyenv global 3.8.18'. Then I run pip3 install -r requirements.txt to install all packages. 
 
 Secondly, the size of the ML model version 1 was more than 100MB and I could not push it to github since the maximum allowed file size is 100MB. I use Git LFS as suggested in https://git-lfs.com/ to solve the problem.
 
@@ -410,19 +416,17 @@ Secondly, the size of the ML model version 1 was more than 100MB and I could not
 
 <details>
 
-<summary>Low Accuracy of ML model</summary>
+<summary>Name of Uploaded Plant Image</summary>
 
-The first ML model had low accuracy and high loss as shown below:
+There was an issue in the code where uploading images via URL caused a discrepancy in the Plant Image names. This occurred because the names of images uploaded from browsing files were replaced with those from the URL, resulting in a shift in names. To resolve this, I implemented a method to track the number of images already uploaded and adjusted the index accordingly when appending filenames extracted from URLs.
 
-![Accuracy](/jupyter_notebooks/outputs/v1/model_training_acc_old.png)
+</details>
 
-![Loss](/jupyter_notebooks/outputs/v1/model_training_losses_old.png)
+<details>
 
-I discovered that the reason for the issue was due to using: `model.add(Dense(1, activation='sigmoid'))`. To enhance my accuracy, I replaced it with `model.add(layers.Dense(3, activation='softmax'))`.
+<summary>Plant Image Sizes</summary>
 
-Using a sigmoid activation function in the output layer along with a single output neuron is typically suitable for binary classification tasks, where the goal is to predict between two classes (e.g., healthy vs. diseased). However, when dealing with multiple classes (e.g., healthy, powdery mildew, rust), it's recommended to use the softmax activation function in the output layer and have one output neuron per class.
-
-Therefore, for a classification problem with three classes, it's preferable to use the softmax activation function in the output layer and have three output neurons, each representing one of the classes. This allows the model to output a probability distribution over the three classes, making it more appropriate for multi-class classification tasks.
+The original dataset from [kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset) has high-resolution images, which negatively impacts the speed performance of the machine learning model. Additionally, the size of the saved ML model was excessively large. To mitigate these issues, I utilized [Pillow](https://pypi.org/project/pillow/) for image manipulation.
 
 </details>
 
