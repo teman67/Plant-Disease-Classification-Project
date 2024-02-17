@@ -369,7 +369,7 @@ The version used for the dashboard was version 6, as this showed a normal fit wi
 | Plant Visualizer   |   2nd checkbox unticked   |    Pass     |
 | Plant Visualizer   |    3rd checkbox ticked    |    Pass     |
 | Plant Visualizer   |   3rd checkbox unticked   |    Pass     |
-| Plant Visualizer   |    4rd checkbox ticked    |    Pass     |
+| Plant Visualizer   |    4th checkbox ticked    |    Pass     |
 | Plant Visualizer   |   4th checkbox unticked   |    Pass     |
 | Plant Visualizer   |    5th checkbox ticked    |    Pass     |
 | Plant Visualizer   |   5th checkbox unticked   |    Pass     |
@@ -398,29 +398,31 @@ The version used for the dashboard was version 6, as this showed a normal fit wi
 
 <details>
 
-<summary>CodeAnywhere</summary>
+<summary>Gitpod & Github</summary>
 
-Several issues were encountered with the CodeAnywhere IDE.
+Several issues were encountered with the Gitpod IDE.
 
-Firstly, the IDE would often go offline for 2 to 3 seconds. For the most part this was not an issue but if this occurred whilst executing a cell in a Jupyter notebook the IDE would crash and require restarting. This meant it was particularly difficult to fit the model as successfully executing this process often took up to an hour. As such not as many models were trained as I would have hoped. I decided to stop after v5 and ensure my dashboard and ReadMe report were nearly complete to ensure my project would be submitted on time, before returning to create and fit further models. This issue also meant that early stopped was added to each model, as running all 25 epochs would take several hours and have a high risk of disconnection. This in turn meant that it was harder to detect if the model was overfitting. On return to model fitting, the import libraries was split into individual code cells as this seemed to cause the system to crash less often.
+Firstly, the default python version on gitpod is 3.11 and most of the packages in requirements.txt file could not be installed using python version 3.11. To solve the isuue, I first upgraded the python version using: 'pyenv install 3.8.18'. Then to change the default python version from 3.11 to 3.8.18, I use: 'pyenv global 3.8.18'. Then I run pip3 install -r requirements.txt to install all packages. 
 
-Secondly, during the model training impacted by the first issue, often the code that was saved and committed did not match the code what was in the workspace. Autosave was enabled and all code double checked to be saved by selecting File>Save All before the ‘git add’ and ‘git commit’ commands. This is shown in the commit for v4 where the code in Jupyter notebook 03_modelling_and_evaluation shows an error message for fitting the model, if this was true the outputs for the model would not have been generated.
-
-Thirdly, when trying to commit the code for v3, the workspace would crash. Once re-opened the ‘git add’ command would produce the following error:
-
-![IDE_error](readme_files/ide_error.png)
-
-This was fixed by running the command ‘rm -f .git/index.lock’ as per this [Stack Overflow post](https://stackoverflow.com/questions/38004148/another-git-process-seems-to-be-running-in-this-repository). The issue kept occurring so instead of using ‘git add .’ each file was added individually. This determined that the source of the error was the ‘mildew_detector_model.h5’. To fix the error this file was added to the .gitignore file. The same was done for v2-5, and only v5 was removed to complete the dashboard.
+Secondly, the size of the ML model version 1 was more than 100MB and I could not push it to github since the maximum allowed file size is 100MB. I use Git LFS as suggested in https://git-lfs.com/ to solve the problem.
 
 </details>
 
 <details>
 
-<summary>Incorrect Softmax Predictions</summary>
+<summary>Low Accuracy of ML model</summary>
 
-The models using Softmax as the activation function initially gave the incorrect predictions as the outputs were reversed. This [Stack Overflow post](https://stackoverflow.com/questions/54377389/keras-imagedatagenerator-why-are-the-outputs-of-my-cnn-reversed) suggested the cause of the bug. To fix, the labels were explicitly added to the prediction code (below) and corrected in the src/machine_learning/predictive_analysis.py file.
+The first ML model had low accuracy and high loss as shown below:
 
-![Softmax Bug](readme_files/softmax_bug.png)
+![Accuracy](/jupyter_notebooks/outputs/v1/model_training_acc_old.png)
+
+![Loss](/jupyter_notebooks/outputs/v1/model_training_losses_old.png)
+
+I discovered that the reason for the issue was due to using: `model.add(Dense(1, activation='sigmoid'))`. To enhance my accuracy, I replaced it with `model.add(layers.Dense(3, activation='softmax'))`.
+
+Using a sigmoid activation function in the output layer along with a single output neuron is typically suitable for binary classification tasks, where the goal is to predict between two classes (e.g., healthy vs. diseased). However, when dealing with multiple classes (e.g., healthy, powdery mildew, rust), it's recommended to use the softmax activation function in the output layer and have one output neuron per class.
+
+Therefore, for a classification problem with three classes, it's preferable to use the softmax activation function in the output layer and have three output neurons, each representing one of the classes. This allows the model to output a probability distribution over the three classes, making it more appropriate for multi-class classification tasks.
 
 </details>
 
