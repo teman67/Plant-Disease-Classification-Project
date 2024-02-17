@@ -10,6 +10,11 @@ import itertools
 import random
 
 def page_plant_image_visualizer_body():
+    '''
+    Displays plant image visualizations including average and variability images,
+    difference between average images, and image montage.
+    '''
+
     st.write("### Plant image Visualizer")
     st.info(
         f"* The client is interested in having a study that visually "
@@ -74,6 +79,17 @@ def page_plant_image_visualizer_body():
 
 
 def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15,10)):
+  '''
+    Displays a montage of images from a specified directory and label.
+
+    Args:
+    - dir_path (str): The directory path where the images are located.
+    - label_to_display (str): The label of the images to display.
+    - nrows (int): Number of rows in the montage.
+    - ncols (int): Number of columns in the montage.
+    - figsize (tuple): Size of the figure for displaying the montage.
+  '''
+  
   sns.set_style("white")
   labels = os.listdir(dir_path)
 

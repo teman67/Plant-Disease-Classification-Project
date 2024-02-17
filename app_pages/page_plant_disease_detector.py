@@ -16,6 +16,12 @@ from src.machine_learning.predictive_analysis import (
 )
 
 def page_plant_disease_detector_body():
+    '''
+    Displays the plant disease detector interface allowing users to upload images or provide URLs for prediction.
+    Performs prediction on the uploaded images using a machine learning model and displays the results along with treatment suggestions if applicable.
+    Generates an analysis report and provides an option to download it as a CSV file.
+    '''
+    
     st.info(
         f"* The client is interested in telling whether a given plant image is healthy or not. Besides, if it is not healthy, which type of plant disease it has."
     )

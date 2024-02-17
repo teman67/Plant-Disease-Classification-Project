@@ -3,6 +3,10 @@ import matplotlib.pyplot as plt
 
 
 def page_project_hypothesis_body():
+    '''
+    Displays the project hypothesis, objectives, dataset details, machine learning model, success criteria, potential impact, and a thank you message.
+    '''
+    
     st.write("### Project Hypothesis and Validation")
 
     st.success(
