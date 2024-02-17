@@ -430,8 +430,6 @@ Therefore, for a classification problem with three classes, it's preferable to u
 
 There are no known unfixed bugs.
 
-[Table Of Contents](#table-of-contents)
-
 ## Deployment
 
 ### Heroku
@@ -466,19 +464,17 @@ To deploy this app to Heroku from its GitHub repository:
 
 ### Forking the repository
 
-- Open the [Mildew Detection in Cherry Leaves](https://github.com/Porsil/mildew_detection_in_cherry_leaves) repository.
+- Open the [Plant Disease Classification](https://github.com/teman67/PP5-Plant-Disease-Classification) repository.
 - Click the 'Fork' button in the top right.
 - This creates a copy of the repository.
 
 ### Cloning the repository
 
-- Open the [Mildew Detection in Cherry Leaves](https://github.com/Porsil/mildew_detection_in_cherry_leaves) repository.
+- Open the [Plant Disease Classification](https://github.com/teman67/PP5-Plant-Disease-Classification) repository.
 - Click the green '<> Code' button. Select the preferred cloning option from the list then copy the link provided.
 - Change the current working directory to the location where you want the cloned directory.
 - Type 'git clone' and paste the URL you copied earlier.
 - Press 'Enter' to create your local clone.
-
-[Table Of Contents](#table-of-contents)
 
 ## Languages and Libraries
 
@@ -489,7 +485,7 @@ To deploy this app to Heroku from its GitHub repository:
 ### Frameworks, Libraries & Programs Used
 
 - [GitHub](https://github.com/) was used for version control and agile methodology.
-- [CodeAnywhere](https://codeanywhere.com/) was the workspace used for the project.
+- [Gitpod](https://gitpod.io/) was the workspace used for the project.
 - [Kaggle](https://www.kaggle.com/) was the source of the dataset.
 - [Jupyter Notebook](https://jupyter.org/) was used to run the machine learning pipeline.
 - [Joblib](https://joblib.readthedocs.io/en/latest/) for saving and loading image shape.
@@ -501,20 +497,16 @@ To deploy this app to Heroku from its GitHub repository:
 - [Streamlit](https://streamlit.io/) was used to create the dashboard.
 - [Scikit-learn](https://scikit-learn.org/stable/) was used as a machine learning library.
 - [Tensorflow](https://www.tensorflow.org/) was used as a machine learning library.
+- [Pillow](https://pypi.org/project/pillow/) was used for image manipulation.
 - [Keras](https://keras.io/) was used as a machine learning library.
 - [Heroku](https://dashboard.heroku.com/login) was used to deploy the site.
-
-[Table Of Contents](#table-of-contents)
 
 ## Credits
 
 - Code Institute [Malaria Detector](https://github.com/Code-Institute-Solutions/WalkthroughProject01) project was used extensively as a reference when creating this project.
-- Code Institute [Mildew Detection in Cherry Leaves](https://github.com/Code-Institute-Solutions/milestone-project-mildew-detection-in-cherry-leaves) template was used to create the project.
-- Code Institue lessons on Data Analytics Packages > ML:TensorFlow
-- This [StackOverflow](https://stackoverflow.com/questions/38004148/another-git-process-seems-to-be-running-in-this-repository) post was used to fix the git add bug.
-- This [StackOverflow](https://stackoverflow.com/questions/54377389/keras-imagedatagenerator-why-are-the-outputs-of-my-cnn-reversed) post was used to fix the softmax bug.
-- Details of powdery mildew were taken from this [Wikipedia](https://en.wikipedia.org/wiki/Powdery_mildew) article.
-- CRISP-DM diagram taken from [Data Science Process Alliance](https://www.datascience-pm.com/crisp-dm-2/).
+- The readme template was taken from [Mildew Detection in Cherry Leaves](https://github.com/Porsil/mildew_detection_in_cherry_leaves/blob/main/README.md). 
+- CRISP-DM diagram taken from [Medium](https://medium.com/@yennhi95zz/6-the-deployment-phase-of-the-crisp-dm-methodology-a-detailed-discussion-f802a7cb9a0f).
+- Youtube channel [Fanilo Andrianasolo](https://www.youtube.com/@andfanilo) was used for customization of the Streamlit app.
 
 [Table Of Contents](#table-of-contents)
 
