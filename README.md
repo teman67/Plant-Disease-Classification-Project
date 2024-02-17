@@ -408,7 +408,7 @@ Therefore, for a classification problem with three classes, it's preferable to u
 
 <summary>Gitpod & Github</summary>
 
-Firstly, the default python version on gitpod is 3.10.12 and most of the packages in requirements.txt file could not be installed using python version 3.10.12. To solve the isuue, I first upgraded the python version using: 'pyenv install 3.8.18'. Then to change the default python version from 3.11 to 3.8.18, I use: 'pyenv global 3.8.18'. Then I run pip3 install -r requirements.txt to install all packages. 
+Firstly, the default python version on gitpod is 3.10.12 and most of the packages in requirements.txt file could not be installed using python version 3.10.12. To solve the isuue, I first upgraded the python version using: 'pyenv install 3.8.18'. Then to change the default python version from 3.10.12 to 3.8.18, I use: 'pyenv global 3.8.18'. Then I run pip3 install -r requirements.txt to install all packages. 
 
 Secondly, the size of the ML model version 1 was more than 100MB and I could not push it to github since the maximum allowed file size is 100MB. I use Git LFS as suggested in https://git-lfs.com/ to solve the problem.
 
@@ -427,6 +427,14 @@ There was an issue in the code where uploading images via URL caused a discrepan
 <summary>Plant Image Sizes</summary>
 
 The original dataset from [kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset) has high-resolution images, which negatively impacts the speed performance of the machine learning model. Additionally, the size of the saved ML model was excessively large. To mitigate these issues, I utilized [Pillow](https://pypi.org/project/pillow/) for image manipulation.
+
+</details>
+
+<details>
+
+<summary>RGB mode</summary>
+
+The Streamlit app encountered an issue where it crashed upon uploading an image with a mode that was not RGB. To address this, I implemented a check to first determine the mode of the uploaded images. If the mode was not in RGB, the code automatically converted them to RGB mode.
 
 </details>
 
