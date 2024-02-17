@@ -294,6 +294,8 @@ The report is accessible on the [Plant Disease Detector page](https://plant-dise
 
 - The hypothesis that apple leaves with powdery mildew or rust can be differentiated from healthy leaves by their appearance was confirmed through various visual analyses.
 
+![Sample](/readme/sample.png)
+
 An average image study and image montage were conducted to discern disparities between healthy leaves and those affected by powdery mildew or rust. The image montage vividly illustrated that leaves infected with powdery mildew are distinguishable due to the presence of white deposits on the affected leaves. Affected leaves with rust are distinguishable by the presence of yellow or orange spots on the plants.
 
 Furthermore, the average and variability images revealed distinctive patterns, particularly within the center of the leaf, relating to color pigmentation. Notably, the variability images showcased a discernible difference wherein the center of healthy leaves appeared black, whereas the center of infected leaves did not exhibit the same characteristic.
