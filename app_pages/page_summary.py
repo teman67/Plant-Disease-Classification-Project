@@ -1,8 +1,38 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+import time
+
+# Function to check if the warning message has been shown
+def check_warning_message_state():
+    '''
+    Checks if the warning message has been shown.
+    '''
+
+    if 'warning_shown' not in st.session_state:
+        st.session_state.warning_shown = False
+
+# Function to show the warning message
+def show_warning_message():
+    '''
+    Displays the warning message recommending light mode over dark mode.
+    '''
+
+    if not st.session_state.warning_shown:
+        placeholder = st.empty()
+        placeholder.markdown('<div style="background-color: #FFEEEB; padding: 30px; margin-top: 40px; border-radius: 5px; text-align: center;"><p style="font-size: 20px; color: #333333"><strong>For better visualization, it is recommended to use Light mode instead of Dark mode in Settings.</strong></p></div>', unsafe_allow_html=True)
+        st.session_state.warning_shown = True
+
+        time.sleep(7)  # Wait for 7 seconds
+        placeholder.empty()
 
 
 def page_summary_body():
+    '''
+    Displays the page summary body including project details and a warning message.
+    '''
+
+    check_warning_message_state()
+    show_warning_message()
 
     st.write("### Quick Project Summary")
 
@@ -31,3 +61,4 @@ def page_summary_body():
         f"* 2 - Distinguishing between Healthy, Powdery, and Rust plants.\n"
         f"* 3 - Provide recommendations for treating plants based on the type of disease they are afflicted with."
         )
+
