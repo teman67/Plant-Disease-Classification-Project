@@ -22,7 +22,7 @@ def show_warning_message():
         placeholder.markdown('<div style="background-color: #FFEEEB; padding: 30px; margin-top: 40px; border-radius: 5px; text-align: center;"><p style="font-size: 20px; color: #333333"><strong>For better visualization, it is recommended to use Light mode instead of Dark mode in Settings.</strong></p></div>', unsafe_allow_html=True)
         st.session_state.warning_shown = True
 
-        time.sleep(7)  # Wait for 7 seconds
+        time.sleep(5)  # Wait for 5 seconds
         placeholder.empty()
 
 
