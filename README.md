@@ -96,7 +96,6 @@ Summary:
 - The dataset contains 1532 images taken from the client's crop fields. The images show healthy apple leaves, apple leaves that have powdery mildew or rust.
 - The dataset is located on [Kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset).
 
-[Table Of Contents](#table-of-contents)
 
 ## User Stories
 
@@ -107,7 +106,6 @@ Summary:
 - As a client I require treatment suggestions based on identified plant diseases to effectively address any issues affecting my plants' health.
 - As a client I require the facility to download a report containing the provided predictions, ensuring that I have a record of the outcomes for future reference.
 
-[Table Of Contents](#table-of-contents)
 
 ## Dashboard Design - Streamlit App User Interface
 
@@ -521,6 +519,7 @@ To deploy this app to Heroku from its GitHub repository:
 - The readme template was taken from [Mildew Detection in Cherry Leaves](https://github.com/Porsil/mildew_detection_in_cherry_leaves/blob/main/README.md). 
 - CRISP-DM diagram taken from [Medium](https://medium.com/@yennhi95zz/6-the-deployment-phase-of-the-crisp-dm-methodology-a-detailed-discussion-f802a7cb9a0f).
 - Youtube channel [Fanilo Andrianasolo](https://www.youtube.com/@andfanilo) was used for customization of the Streamlit app.
+- Youtube video [Python | Resize Image with Pillow](https://www.youtube.com/watch?v=p9Wmk7YC_vs) was used to resize the downloaded images from [Kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset) as explained in [DataVisualization](/jupyter_notebooks/02%20-%20DataVisualization.ipynb).
 
 [Table Of Contents](#table-of-contents)
 
