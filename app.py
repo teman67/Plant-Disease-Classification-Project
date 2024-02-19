@@ -20,7 +20,7 @@ app.add_page("Machine Learning Performance", page_machine_learning_performance_m
 page_bg_img = '''
 <style>
 [data-testid="stReportViewContainer"]{
-background-image: url("https://res.cloudinary.com/dlthn5m1i/image/upload/v1707502369/plant_image_b2cnno.webp");
+background-image: url("https://res.cloudinary.com/dlthn5m1i/image/upload/v1708385054/4057631_ubcydg.webp");
 background-size: cover;
 } 
 </style>
