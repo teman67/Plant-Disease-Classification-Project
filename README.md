@@ -3,9 +3,9 @@
 
 ## Introduction
 
-The Plant Disease Classification dashboard application utilizes Machine Learning technology to allow users to upload images of plant leaves for analysis. It assesses whether the plant is healthy or afflicted with powdery mildew or Rust, providing users with a downloadable report summarizing the findings.
+The Plant Disease Classification dashboard application utilizes Machine Learning technology to allow users to upload images of apple leaves for analysis. It assesses whether the apple leaves is healthy or afflicted with powdery mildew or Rust, providing users with a downloadable report summarizing the findings.
 
-![Home Screen](/readme/First_page.png)
+![Home Screen](/readme/First_page_new.png)
 
 ### Deployed version at [Plant Disease Classification](https://plant-disease-classification-04c8092dc2fe.herokuapp.com/)
 
@@ -70,7 +70,6 @@ Summary:
 - Business Requirement 3: Report
   - A downloadable report containing the predicted status of all uploaded images is available for users.
 
-[Table Of Contents](#table-of-contents)
 
 ## ML Business Case
 

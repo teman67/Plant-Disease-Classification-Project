@@ -126,7 +126,7 @@ def page_machine_learning_performance_metrics():
 
     st.markdown(
     f"<div style='font-size:16px; border: 2px solid #000000; padding: 10px; background-color: #E6E6FA;'>"
-    f"TThe model achieves an accuracy of 95.47%, indicating that it correctly predicts the classes of the test samples with an average accuracy of 95.47% across all classes."
+    f"The model achieves an accuracy of 95.47%, indicating that it correctly predicts the classes of the test samples with an average accuracy of 95.47% across all classes."
     f"<br>"
     f"The precision, recall, and F1-score are also high, indicating that the model performs well in terms of both "
     f"correctly identifying positive samples and minimizing false positives."
