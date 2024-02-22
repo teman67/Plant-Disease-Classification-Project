@@ -362,6 +362,47 @@ Therefore, for a classification problem with three classes, it's preferable to u
 
 <details>
 
+<summary>User Story Testing</summary>
+
+**Business Requirement 1: Data Visualization**
+
+1. **Interactive Dashboard Navigation:**
+   - **User Story:** Client needs easy navigation within the interactive dashboard for effective data comprehension.
+   - **Test Scenario:**
+     | Feature           | Action                           | Expected Outcome                         | Actual Outcome |
+     | ----------------- | -------------------------------- | ---------------------------------------- | -------------- |
+     | Navigation bar    | Clicking on side menu buttons    | Correct display of selected page content | Functions as intended |
+
+2. **Plant Image Visualizer Page:**
+   - **User Story:** Clients require visual representation of average images, image disparities, and variations between healthy and diseased apple leaves for quick identification.
+   - **Test Scenarios:**
+     | Feature                                | Action                            | Expected Outcome                      | Actual Outcome |
+     | -------------------------------------- | --------------------------------- | ------------------------------------- | -------------- |
+     | Checkbox for average and variability images | Checking the checkbox          | Rendering of relevant image plots     | Functions as intended |
+     | Checkbox for difference between average images | Checking the checkbox       | Rendering of relevant image plots     | Functions as intended |
+     | Checkbox for image montage            | Checking the checkbox           | Display of label selection dropdown and "Create montage" button | Functions as intended |
+     | Image montage creation button         | Clicking 'Create Montage' button after label selection | Display of relevant image montage with correct label | Functions as intended |
+
+**Business Requirement 2 and 3: Classification and Providing recommendations**
+
+1. **Plant Disease Detector Page:**
+   - **User Story:** Clients aim to upload apple leaf images to utilize the ML model for immediate and accurate disease prediction.
+   - **Test Scenario:**
+     | Feature            | Action                                          | Expected Outcome                            | Actual Outcome |
+     | ------------------ | ----------------------------------------------- | ------------------------------------------- | -------------- |
+     | File uploader      | Uploading image data via 'Browse files' button or using image URL(s) | Display of disease prediction with probabilities and suggest treatments | Functions as intended |
+
+2. **Saving Model Predictions:**
+   - **User Story:** Clients need to save model predictions in a CSV file with timestamps for record-keeping.
+   - **Test Scenario:**
+     | Feature                  | Action                                          | Expected Outcome                            | Actual Outcome |
+     | ------------------------ | ----------------------------------------------- | ------------------------------------------- | -------------- |
+     | Download Report link     | Clicking on 'Download Analysis Report as CSV' link | Saving of a CSV file with timestamps and prediction details | Functions as intended |
+
+</details>
+
+<details>
+
 <summary>Dashboard Testing</summary>
 
 | Page         |          Feature          | Pass / Fail |
@@ -519,6 +560,7 @@ To deploy this app to Heroku from its GitHub repository:
 - CRISP-DM diagram taken from [Medium](https://medium.com/@yennhi95zz/6-the-deployment-phase-of-the-crisp-dm-methodology-a-detailed-discussion-f802a7cb9a0f).
 - Youtube channel [Fanilo Andrianasolo](https://www.youtube.com/@andfanilo) was used for customization of the Streamlit app.
 - Youtube video [Python | Resize Image with Pillow](https://www.youtube.com/watch?v=p9Wmk7YC_vs) was used to resize the downloaded images from [Kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset) as explained in [DataVisualization](/jupyter_notebooks/02%20-%20DataVisualization.ipynb).
+- Background images were taken from [Pixabay](https://pixabay.com/).
 
 [Table Of Contents](#table-of-contents)
 
