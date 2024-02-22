@@ -20,9 +20,12 @@ app.add_page("Machine Learning Performance", page_machine_learning_performance_m
 page_bg_img = '''
 <style>
 [data-testid="stReportViewContainer"]{
-background-image: url("https://res.cloudinary.com/dlthn5m1i/image/upload/v1708385054/4057631_ubcydg.webp");
+background-image: url("https://res.cloudinary.com/dlthn5m1i/image/upload/v1708424801/background_tmh3qe.webp");
 background-size: cover;
-} 
+}
+[data-testid="stSidebar"] > div:first-child {
+background-image: url("https://res.cloudinary.com/dlthn5m1i/image/upload/v1708609849/flower-4905417_1280_errckh.jpg");
+}
 </style>
 '''
 st.markdown(page_bg_img, unsafe_allow_html=True)
