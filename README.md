@@ -486,47 +486,48 @@ There are no known unfixed bugs.
 
 ### Heroku
 
-To deploy this app to Heroku from its GitHub repository:
+To deploy this app to Heroku from its GitHub repository, follow these steps:
 
 #### Create a Heroku App:
 
-- Log in to [Heroku](https://dashboard.heroku.com/apps). If required, create an account.
-- Click the 'New' button in the top right and select 'Create new app' from the drop-down menu.
-- Enter a name for the app in the 'App name' field, this must be an unique and should be meaningful to the app's content.
-- Select your region in the 'Choose a region' field.
-- Click on the 'Create app' button.
+- Begin by logging in to [Heroku](https://dashboard.heroku.com/apps). If you don't have an account yet, you'll need to create one.
+- Once logged in, click the 'New' button at the top right corner and select 'Create new app' from the drop-down menu.
+- Choose a unique and descriptive name for your app in the 'App name' field.
+- Select the region closest to your location from the 'Choose a region' field.
+- After filling in the details, click on the 'Create app' button.
 
-#### Deploy in Heroku
+#### Deploying on Heroku
 
-- Ensure requirements.txt file exists and contains the dependencies.
-- Set the stack to Heroku-20 as follows:
-  - In Heroku, click 'Account Settings' from the avatar menu.
-  - Scroll to the 'API Key' section and click 'Reveal' then copy the key.
-  - In the workspace, Log in to the Heroku command line interface using 'heroku login -i'.
-  - Enter your email and copied API when prompted.
-  - Use the command 'heroku stack:set heroku-20 -a yourappname'. yourappname is the name given to the app in the 'Create a Heroku App' section above.
-- Ensure the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-- Ensure a Procfile is present and contains the code 'web: sh setup.sh && streamlit run app.py'.
-- Ensure the code is committed and pushed to GitHub.
-- In Heroku click on the 'Deploy' tab and scroll down to the 'Deployment Method' section. Select 'GitHub' and confirm you wish to deploy using GitHub. Enter your GitHub password if prompted.
-- Scroll to the 'Connect to GitHub' section and search for your repository.
-- Click 'Connect' when found.
-- To deploy go to the 'Manual Deploy' section add the 'main' branch to 'Choose a branch to deploy' field and click 'Deploy Branch'.
-- The app is now live, click 'View' to view the deployed site.
+- Make sure your project includes a requirements.txt file listing all the dependencies required to run the app.
+- Set the stack to Heroku-20 by following these steps:
+  - Navigate to 'Account Settings' from the avatar menu in Heroku.
+  - Under the 'API Key' section, click 'Reveal' to display your API key, then copy it.
+  - In your command line interface, log in to Heroku using 'heroku login -i', and enter your email and copied API key when prompted.
+  - Execute the command 'heroku stack:set heroku-20 -a yourappname', replacing 'yourappname' with the name you gave to your app during its creation.
+- Ensure the runtime.txt file specifies a Python version supported by the [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack.
+- Confirm the presence of a Procfile containing the command 'web: sh setup.sh && streamlit run app.py'.
+- Ensure all your code changes are committed and pushed to GitHub.
+- Back in Heroku, navigate to the 'Deploy' tab, and under the 'Deployment Method' section, select 'GitHub' and confirm your intention to deploy from GitHub. If prompted, enter your GitHub password.
+- Search for your repository under the 'Connect to GitHub' section, and once found, click 'Connect'.
+- To initiate deployment, proceed to the 'Manual Deploy' section, add the 'main' branch to the 'Choose a branch to deploy' field, and click 'Deploy Branch'.
+- Your app is now live on Heroku. Click 'View' to access the deployed site.
 
-### Forking the repository
+### Forking the Repository
 
-- Open the [Plant Disease Classification](https://github.com/teman67/PP5-Plant-Disease-Classification) repository.
-- Click the 'Fork' button in the top right.
-- This creates a copy of the repository.
+To create a copy of the repository, follow these steps:
 
-### Cloning the repository
+- Visit the [Plant Disease Classification](https://github.com/teman67/PP5-Plant-Disease-Classification) repository.
+- Click the 'Fork' button located at the top right corner of the page.
 
-- Open the [Plant Disease Classification](https://github.com/teman67/PP5-Plant-Disease-Classification) repository.
-- Click the green '<> Code' button. Select the preferred cloning option from the list then copy the link provided.
-- Change the current working directory to the location where you want the cloned directory.
-- Type 'git clone' and paste the URL you copied earlier.
-- Press 'Enter' to create your local clone.
+### Cloning the Repository
+
+To clone the repository to your local machine, proceed as follows:
+
+- Visit the [Plant Disease Classification](https://github.com/teman67/PP5-Plant-Disease-Classification) repository.
+- Click the green '<> Code' button and select your preferred cloning option from the list. Copy the provided link.
+- Open your terminal and navigate to the directory where you want to store the cloned repository.
+- Execute the command 'git clone' followed by the URL you copied earlier.
+- Press 'Enter' to create a local clone of the repository.
 
 ## Languages and Libraries
 
@@ -536,27 +537,43 @@ To deploy this app to Heroku from its GitHub repository:
 
 ### Frameworks, Libraries & Programs Used
 
-- [GitHub](https://github.com/) was used for version control and agile methodology.
-- [Gitpod](https://gitpod.io/) was the workspace used for the project.
-- [Kaggle](https://www.kaggle.com/) was the source of the dataset.
-- [Jupyter Notebook](https://jupyter.org/) was used to run the machine learning pipeline.
-- [Joblib](https://joblib.readthedocs.io/en/latest/) for saving and loading image shape.
-- [NumPy](https://numpy.org/) was used to convert images into an array.
-- [Pandas](https://pandas.pydata.org/) was used for data analysis and manipulation.
-- [Matplotlib](https://matplotlib.org/) was used to create charts and plots.
-- [Seaborn](https://seaborn.pydata.org/) was used for data visualization.
-- [Plotly](https://plotly.com/) was used to create charts and plots.
-- [Streamlit](https://streamlit.io/) was used to create the dashboard.
-- [Scikit-learn](https://scikit-learn.org/stable/) was used as a machine learning library.
-- [Tensorflow](https://www.tensorflow.org/) was used as a machine learning library.
-- [Pillow](https://pypi.org/project/pillow/) was used for image manipulation.
-- [Keras](https://keras.io/) was used as a machine learning library.
-- [Heroku](https://dashboard.heroku.com/login) was used to deploy the site.
+- [GitHub](https://github.com/): GitHub served as our primary platform for version control, allowing us to collaboratively manage code changes and adopt agile methodology practices. It facilitated seamless collaboration among team members by providing features such as issue tracking, pull requests, and project boards.
+
+- [Gitpod](https://gitpod.io/): Gitpod was the chosen workspace environment for our project. It offered a cloud-based integrated development environment (IDE) that allowed developers to easily spin up pre-configured development environments directly from GitHub repositories. This enabled team members to have consistent development setups and reduced the overhead of setting up individual development environments.
+
+- [Kaggle](https://www.kaggle.com/): Kaggle served as the primary source of our dataset. Kaggle is a popular platform for data science and machine learning competitions, as well as a repository of datasets. Leveraging Kaggle allowed us to access high-quality datasets, explore community-contributed datasets, and participate in competitions to benchmark our models against others in the field.
+
+- [Jupyter Notebook](https://jupyter.org/): Jupyter Notebook was utilized to execute our machine learning pipeline. Jupyter Notebook is an open-source web application that allows users to create and share documents containing live code, equations, visualizations, and narrative text. It provided an interactive computing environment that facilitated iterative development and experimentation with our machine learning models.
+
+- [Joblib](https://joblib.readthedocs.io/en/latest/): Joblib was employed for saving and loading image shapes within our project. Joblib is a library in Python that provides utilities for saving and loading Python objects to/from disk efficiently. In our context, it helped streamline the process of persisting image shapes, allowing us to cache results and avoid redundant computations during our workflow.
+
+- [NumPy](https://numpy.org/): NumPy was used for converting images into arrays. NumPy is a fundamental package for scientific computing in Python, providing support for multidimensional arrays, matrices, and high-level mathematical functions. It played a crucial role in preprocessing our image data, converting raw image data into numerical arrays that could be fed into our machine learning models.
+
+- [Pandas](https://pandas.pydata.org/): Pandas was instrumental for data analysis and manipulation tasks within our project. Pandas is a powerful data manipulation and analysis library for Python, offering data structures and operations for manipulating numerical tables and time series data. It facilitated tasks such as data cleaning, transformation, and exploration, enabling us to gain insights from our dataset effectively.
+
+- [Matplotlib](https://matplotlib.org/): Matplotlib was utilized for creating charts and plots to visualize our data. Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. It provided us with a wide range of plotting functionalities, allowing us to generate various types of charts and plots to explore patterns and trends within our dataset.
+
+- [Seaborn](https://seaborn.pydata.org/): Seaborn was employed for data visualization, complementing Matplotlib with additional high-level interfaces for drawing attractive and informative statistical graphics. Seaborn builds on top of Matplotlib and integrates seamlessly with Pandas data structures, making it easy to generate complex visualizations with concise code syntax.
+
+- [Plotly](https://plotly.com/): Plotly was another tool utilized for creating interactive charts and plots in our project. Plotly is a versatile graphing library that supports a wide range of chart types and provides interactivity features such as hover tooltips, zooming, and panning. Its integration with Jupyter Notebook allowed us to create interactive visualizations directly within our notebooks.
+
+- [Streamlit](https://streamlit.io/): Streamlit was used to create the dashboard for our project. Streamlit is an open-source app framework for building and sharing data-driven web applications quickly. It provided a simple and intuitive way to convert Python scripts into interactive web apps, enabling us to deploy our machine learning models and visualizations with minimal effort.
+
+- [Scikit-learn](https://scikit-learn.org/stable/): Scikit-learn served as a cornerstone machine learning library within our project. Scikit-learn is a powerful and easy-to-use library for machine learning in Python, offering tools for data preprocessing, feature extraction, model selection, and evaluation. It provided a consistent interface for implementing various machine learning algorithms and pipelines, facilitating the development and evaluation of predictive models.
+
+- [Tensorflow](https://www.tensorflow.org/): Tensorflow was another key machine learning library utilized in our project. Tensorflow is an open-source deep learning framework developed by Google, offering comprehensive support for building and deploying machine learning models at scale. It provided low-level APIs for neural network development as well as high-level APIs through its Keras interface, enabling us to build and train complex neural network architectures efficiently.
+
+- [Pillow](https://pypi.org/project/pillow/): Pillow was employed for image manipulation tasks within our project. Pillow is a fork of the Python Imaging Library (PIL), providing support for opening, manipulating, and saving many different image file formats. It offered a rich set of functionalities for image processing, such as resizing, cropping, filtering, and enhancing, allowing us to preprocess images effectively before feeding them into our machine learning pipeline.
+
+- [Keras](https://keras.io/): Keras was used as a high-level API for building neural networks within our project. Keras is a user-friendly interface for neural network development, providing a simple and intuitive way to design and train deep learning models. It abstracts away the complexities of low-level neural network implementation, allowing us to focus on model architecture and experimentation.
+
+- [Heroku](https://dashboard.heroku.com/login): Heroku was utilized to deploy the web application for our project. Heroku is a cloud platform that enables developers to build, deploy, and scale applications quickly and efficiently. It provided a seamless deployment process, allowing us to deploy our Streamlit dashboard and associated machine learning models with minimal configuration and management overhead.
 
 ## Credits
 
 - Code Institute [Malaria Detector](https://github.com/Code-Institute-Solutions/WalkthroughProject01) project was used extensively as a reference when creating this project.
 - The readme template was taken from [Mildew Detection in Cherry Leaves](https://github.com/Porsil/mildew_detection_in_cherry_leaves/blob/main/README.md). 
+- Dataset was taken from [Plant disease recognition dataset](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset) under [CC0: Public Domain License](https://creativecommons.org/publicdomain/zero/1.0/). It means the person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. Anyone can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.
 - CRISP-DM diagram taken from [Medium](https://medium.com/@yennhi95zz/6-the-deployment-phase-of-the-crisp-dm-methodology-a-detailed-discussion-f802a7cb9a0f).
 - Youtube channel [Fanilo Andrianasolo](https://www.youtube.com/@andfanilo) was used for customization of the Streamlit app.
 - Youtube video [Python | Resize Image with Pillow](https://www.youtube.com/watch?v=p9Wmk7YC_vs) was used to resize the downloaded images from [Kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset) as explained in [DataVisualization](/jupyter_notebooks/02%20-%20DataVisualization.ipynb).
