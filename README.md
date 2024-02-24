@@ -174,7 +174,7 @@ The original images [Kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/
 
 ### Model Creation
 
-- For this image classification project, a Convolutional Neural Network (CNN) will be implemented using TensorFlow. The task involves classifying images into one of three categories: healthy, powdery mildew-infected, or rust-infected. Here's a breakdown of the model:
+- For this image classification project, a Convolutional Neural Network (CNN) is implemented using TensorFlow. The task involves classifying images into one of three categories: healthy, powdery mildew-infected, or rust-infected. Here's a breakdown of the model:
 
   - The model is initiated using the Sequential() function, indicating a sequential layer-by-layer architecture.
 
@@ -188,9 +188,9 @@ The original images [Kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/
 
   - The final dense layer consists of 3 units, representing the number of classes (Healthy, Powdery, Rust) in the classification task. It uses the softmax activation function to output probabilities for each class, ensuring the sum of probabilities across all classes equals 1.
 
-The model architecture was iteratively refined through trial and error, aiming to address issues such as underfitting or overfitting observed in previous versions. The chosen model version, referred to as version 3 in the evaluation phase, demonstrated a balanced fit.
+The model architecture was iteratively refined through trial and error, aiming to address issues such as underfitting or overfitting observed in previous versions. The chosen model version, referred to as version 2 in the evaluation phase, demonstrated a balanced fit.
 
-Based on the evaluation results, version 3 was selected for integration into the dashboard. Detailed insights into the testing phase can be found in the [testing section](#testing).
+Based on the evaluation results, [version 2](/jupyter_notebooks/outputs/v2/) was selected for integration into the dashboard. Detailed insights into the testing phase can be found in the [testing section](#testing).
 
 ![ML_Model](/readme/ML_model.png)
 
@@ -346,13 +346,13 @@ In conclusion, this hypothesis was validated as the model inaccurately predicted
 
 <summary>Low Accuracy of ML model</summary>
 
-The first ML model had low accuracy and high loss as shown below:
+The first ML model [version 1](/jupyter_notebooks/outputs/v1/) had low accuracy and high loss as shown below:
 
 ![Accuracy](/jupyter_notebooks/outputs/v1/model_training_acc_old.png)
 
 ![Loss](/jupyter_notebooks/outputs/v1/model_training_losses_old.png)
 
-I discovered that the reason for the issue was due to using: `model.add(Dense(1, activation='sigmoid'))`. To enhance my accuracy, I replaced it with `model.add(layers.Dense(3, activation='softmax'))`.
+I discovered that the reason for the issue was due to using: `model.add(Dense(1, activation='sigmoid'))`. To enhance my accuracy, I replaced it with `model.add(layers.Dense(3, activation='softmax'))` in [version 2](/jupyter_notebooks/outputs/v2/).
 
 Using a sigmoid activation function in the output layer along with a single output neuron is typically suitable for binary classification tasks, where the goal is to predict between two classes (e.g., healthy vs. diseased). However, when dealing with multiple classes (e.g., healthy, powdery mildew, rust), it's recommended to use the softmax activation function in the output layer and have one output neuron per class.
 
