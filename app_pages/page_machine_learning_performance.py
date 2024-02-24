@@ -19,7 +19,6 @@ def page_machine_learning_performance_metrics():
 
     version = 'v1'
     version_2 = 'v2'
-    version_3 = 'v3'
 
     st.write("### Train, Validation and Test Set: Labels Frequencies")
 
@@ -82,7 +81,7 @@ def page_machine_learning_performance_metrics():
     st.write("### Confusion Matrix")
     col1 = st.beta_columns(1)[0]
     with col1:
-        model_acc = plt.imread(f"jupyter_notebooks/outputs/{version_3}/confusion_matrix.png")
+        model_acc = plt.imread(f"jupyter_notebooks/outputs/{version_2}/confusion_matrix.png")
         st.image(model_acc, caption='Confusion Matrix')
 
     st.markdown(
@@ -96,7 +95,7 @@ def page_machine_learning_performance_metrics():
     st.write("---")
 
     # Load confusion matrix from joblib
-    confusion_matrix = joblib.load(f"jupyter_notebooks/outputs/{version_3}/confusion_matrix.joblib")
+    confusion_matrix = joblib.load(f"jupyter_notebooks/outputs/{version_2}/confusion_matrix.joblib")
 
     # Convert confusion matrix to a pandas DataFrame
     confusion_matrix_df = pd.DataFrame(confusion_matrix, columns=['Predicted Healthy', 'Predicted Powdery', 'Predicted Rust'], index=['Actual Healthy', 'Actual Powdery', 'Actual Rust'])
@@ -108,7 +107,7 @@ def page_machine_learning_performance_metrics():
     st.write("---")
 
     # Load metrics from joblib
-    metrics = joblib.load(f"jupyter_notebooks/outputs/{version_3}/metrics.joblib")
+    metrics = joblib.load(f"jupyter_notebooks/outputs/{version_2}/metrics.joblib")
 
     # Convert metrics to a pandas DataFrame
     metrics_df = pd.DataFrame(metrics, index=['Value'])

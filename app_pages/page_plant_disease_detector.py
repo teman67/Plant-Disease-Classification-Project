@@ -102,7 +102,7 @@ def page_plant_disease_detector_body():
             st.image(img_pil, caption=f"Image Size: {img_pil.size[0]}px width x {img_pil.size[1]}px height", output_format='PNG')
             st.markdown('<style>img {margin-bottom: 20px;}</style>', unsafe_allow_html=True)
 
-            version = 'v3'
+            version = 'v2'
             resized_img = resize_input_image(img=img_pil, version=version)
             pred_proba, pred_class = load_model_and_predict(resized_img, version=version)
 
