@@ -13,4 +13,4 @@ keras>=2.13.1
 protobuf>=4.23.3
 
 # Web / Streamlit
-streamlit>=1.30.0
+streamlit==0.85.0
