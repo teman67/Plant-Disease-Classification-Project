@@ -120,9 +120,14 @@ def page_plant_disease_detector_body():
 
             # Print the predicted class with class name
             predicted_class_name = class_mapping[np.argmax(pred_proba)]
-            
-            df_report = df_report.append({"Name": filename, 'Result': predicted_class_name},
-                                         ignore_index=True)
+
+            df_report = pd.concat(
+                [df_report, pd.DataFrame([{
+                    "Name": filename,
+                    "Result": predicted_class_name
+                }])],
+                ignore_index=True
+            )
 
             # Display treatment suggestions if applicable
             if predicted_class_name == 'Healthy':
