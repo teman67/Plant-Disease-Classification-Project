@@ -7,7 +7,7 @@ The Plant Disease Classification dashboard application utilizes Machine Learning
 
 ![Home Screen](/readme/First_page_new.png)
 
-### Deployed version at [Plant Disease Classification](https://plant-disease-classification-04c8092dc2fe.herokuapp.com/)
+### Deployed version at [Plant Disease Classification](https://plant-disease-classification-mlops.streamlit.app/)
 
 ## Table of Contents
 
