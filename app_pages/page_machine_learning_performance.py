@@ -13,9 +13,6 @@ import joblib
 
 
 def page_machine_learning_performance_metrics():
-    """
-    Displays performance metrics and evaluation results for machine learning models.
-    """
 
     version = 'v1'
     version_2 = 'v2'
@@ -39,8 +36,8 @@ def page_machine_learning_performance_metrics():
         f"predictions on the train set (loss) and validation set (val_loss).")
 
     st.write("### Model History")
-    col1, col2 = st.beta_columns(2)
-    with col1: 
+    col1, col2 = st.columns(2)   # UPDATED
+    with col1:
         model_acc = plt.imread(f"jupyter_notebooks/outputs/{version}/model_training_acc.png")
         st.image(model_acc, caption='Model Training Accuracy')
     with col2:
@@ -79,7 +76,7 @@ def page_machine_learning_performance_metrics():
     )
 
     st.write("### Confusion Matrix")
-    col1 = st.beta_columns(1)[0]
+    col1 = st.columns(1)[0]   # UPDATED
     with col1:
         model_acc = plt.imread(f"jupyter_notebooks/outputs/{version_2}/confusion_matrix.png")
         st.image(model_acc, caption='Confusion Matrix')
@@ -94,22 +91,19 @@ def page_machine_learning_performance_metrics():
 
     st.write("---")
 
-    # Load confusion matrix from joblib
     confusion_matrix = joblib.load(f"jupyter_notebooks/outputs/{version_2}/confusion_matrix.joblib")
+    confusion_matrix_df = pd.DataFrame(
+        confusion_matrix,
+        columns=['Predicted Healthy', 'Predicted Powdery', 'Predicted Rust'],
+        index=['Actual Healthy', 'Actual Powdery', 'Actual Rust']
+    )
 
-    # Convert confusion matrix to a pandas DataFrame
-    confusion_matrix_df = pd.DataFrame(confusion_matrix, columns=['Predicted Healthy', 'Predicted Powdery', 'Predicted Rust'], index=['Actual Healthy', 'Actual Powdery', 'Actual Rust'])
-
-    # Display confusion matrix in a Streamlit table
     st.write("Confusion Matrix:")
     st.table(confusion_matrix_df)
 
     st.write("---")
 
-    # Load metrics from joblib
     metrics = joblib.load(f"jupyter_notebooks/outputs/{version_2}/metrics.joblib")
-
-    # Convert metrics to a pandas DataFrame
     metrics_df = pd.DataFrame(metrics, index=['Value'])
 
     st.markdown(
@@ -119,7 +113,6 @@ def page_machine_learning_performance_metrics():
     unsafe_allow_html=True
     )
 
-    # Display metrics in a Streamlit table
     st.write("Model Evaluation Metrics:")
     st.table(metrics_df)
 
@@ -127,11 +120,9 @@ def page_machine_learning_performance_metrics():
     f"<div style='font-size:16px; border: 2px solid #000000; padding: 10px; background-color: #E6E6FA;'>"
     f"The model achieves an accuracy of 95.47%, indicating that it correctly predicts the classes of the test samples with an average accuracy of 95.47% across all classes."
     f"<br>"
-    f"The precision, recall, and F1-score are also high, indicating that the model performs well in terms of both "
-    f"correctly identifying positive samples and minimizing false positives."
+    f"The precision, recall, and F1-score are also high, indicating that the model performs well in terms of minimizing false positives."
     f"<br>"
-    f"The specificity of the model, which measures the ability to correctly identify negative samples, is also high"
-    f"at 94.39%."
+    f"The specificity of the model, which measures the ability to correctly identify negative samples, is also high at 94.39%."
     f"</div>", 
     unsafe_allow_html=True
     )
@@ -141,12 +132,12 @@ def page_machine_learning_performance_metrics():
     st.write("* ### Conclusions")
 
     st.info(
-    f"The ML model/pipeline has successfully fulfilled the following business requirements:\n\n"
-    f"1. **Business Requirement 1:**\n\n"
-    f"- This requirement is satisfied as observed in the Plant image Visualizer page, where healthy and infected leaves are distinguished by their appearance. Powdery infected leaves are identified by white deposits on their surface. Rust infected leaves are shown by orang spots on the leaves\n\n"
-    f"2. **Business Requirement 2:**\n\n"
-    f"- This requirement is met through the Plant Disease Detector page, which accurately predicts whether a leaf from an uploaded image is healthy or infected with powdery mildew or rust, achieving a 95% accuracy rate.\n\n"
-    f"- Plant treatments are recommended based on the types of leaf diseases detected.\n\n"
-    f"3. **Business Requirement 3:**\n\n"
-    f"- This requirement is fulfilled as the Plant Disease Detector page allows users to download a report containing predictions made on uploaded images."
+        f"The ML model/pipeline has successfully fulfilled the following business requirements:\n\n"
+        f"1. **Business Requirement 1:**\n\n"
+        f"- Healthy and infected leaves are distinguishable in the visualizer.\n\n"
+        f"2. **Business Requirement 2:**\n\n"
+        f"- The Plant Disease Detector predicts leaf disease with 95% accuracy.\n\n"
+        f"- It also recommends treatments.\n\n"
+        f"3. **Business Requirement 3:**\n\n"
+        f"- Users can download prediction reports."
     )
