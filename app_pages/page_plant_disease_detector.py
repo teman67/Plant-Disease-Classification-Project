@@ -34,7 +34,7 @@ def page_plant_disease_detector_body():
     st.write("---")
 
     # Option to upload image files
-    with st.expander("Upload Plant Image(s)"):
+    with st.beta_expander("Upload Plant Image(s)"):
         images_buffer = st.file_uploader('Upload plant image(s) or provide URL(s). You may select more than one.',
                                          type=['png', 'jpg', 'jpeg'], accept_multiple_files=True)
 
