@@ -591,7 +591,7 @@ To clone the repository to your local machine, proceed as follows:
 - CRISP-DM diagram taken from [Medium](https://medium.com/@yennhi95zz/6-the-deployment-phase-of-the-crisp-dm-methodology-a-detailed-discussion-f802a7cb9a0f).
 - Youtube channel [Fanilo Andrianasolo](https://www.youtube.com/@andfanilo) was used for customization of the Streamlit app.
 - Youtube video [Python | Resize Image with Pillow](https://www.youtube.com/watch?v=p9Wmk7YC_vs) was used to resize the downloaded images from [Kaggle](https://www.kaggle.com/datasets/rashikrahmanpritom/plant-disease-recognition-dataset) as explained in [DataVisualization](/jupyter_notebooks/02%20-%20DataVisualization.ipynb).
-- Background images were taken from [Pixabay](https://pixabay.com/).
+- Background images were taken from [Pixabay](https://pixabay.com/). .
 
 [Table Of Contents](#table-of-contents)
 
